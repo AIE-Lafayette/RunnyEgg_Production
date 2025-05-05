@@ -29,24 +29,27 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        // record inputs
         _moveDirection = _move.action.ReadValue<Vector2>();
         _moveInputtedThisFrame = _move.action.WasPressedThisFrame();
         _jumpInputted = _jump.action.IsPressed();
 
+        Vector3 newPosition = gameObject.transform.position;
+        // make player move
         if (_moveInputtedThisFrame && _moveDirection.x < 0)
-            Debug.Log("LEFT");
+        {
+            newPosition.x -= _laneWidth;
+        }
         else if (_moveInputtedThisFrame && _moveDirection.x > 0)
-            Debug.Log("RIGHT");
+        {
+            newPosition.x += _laneWidth;
+        }
+        gameObject.transform.position = newPosition;
     }
 
     private void FixedUpdate()
     {
         if (_jumpInputted)
             Debug.Log("JUMP");
-    }
-
-    public void Move(InputAction.CallbackContext context)
-    {
-        
     }
 }

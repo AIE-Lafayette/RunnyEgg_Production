@@ -14,6 +14,12 @@ public class PlayerLivesBehavior : MonoBehaviour
 
     public int Lives { get => _lives; }
 
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+            LoseLife();
+    }
+
     public void LoseLife()
     {
         _lives--;
@@ -21,6 +27,7 @@ public class PlayerLivesBehavior : MonoBehaviour
         if (_lives <= 0)
         {
             OnAllLivesLost.Invoke();
+            Destroy(gameObject);
         }
         else
         {

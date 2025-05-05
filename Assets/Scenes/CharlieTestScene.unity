@@ -453,13 +453,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 0, y: 5, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!1 &1160234425
 GameObject:
   m_ObjectHideFlags: 0
@@ -665,7 +665,7 @@ MonoBehaviour:
   OnAllLivesLost:
     m_PersistentCalls:
       m_Calls: []
-  _lives: 0
+  _lives: 3
 --- !u!114 &1307358851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b026e371d3ba54cb2eb34f9108c1b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _laneWidth: 0
+  _laneWidth: 2
   _move: {fileID: -1133609675643740850, guid: 6bac7c3e74f321644ad1595d945af585, type: 3}
   _jump: {fileID: 637072120847556604, guid: 6bac7c3e74f321644ad1595d945af585, type: 3}
 --- !u!1 &1900103763
