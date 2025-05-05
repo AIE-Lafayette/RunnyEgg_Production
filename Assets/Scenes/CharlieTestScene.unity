@@ -638,6 +638,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: bbc95b27-eaae-426e-829f-0246701de6be
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ce01f106-6fc1-4d1d-8db0-01a70395d67a
+    m_ActionName: Player/Jump[/Keyboard/space]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -675,15 +679,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _laneWidth: 0
-  _movementAction:
-    m_Name: Movement
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 9e232275-1251-4e03-8ba5-e07d2a6ab606
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
+  _move: {fileID: -1133609675643740850, guid: 6bac7c3e74f321644ad1595d945af585, type: 3}
+  _jump: {fileID: 637072120847556604, guid: 6bac7c3e74f321644ad1595d945af585, type: 3}
 --- !u!1 &1900103763
 GameObject:
   m_ObjectHideFlags: 0
