@@ -1,25 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Controls;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float _laneWidth;
+    private InputActionReference _moveInput;
 
     [SerializeField]
-    private InputActionReference _move;
-
-    [SerializeField]
-    private InputActionReference _jump;
+    private InputActionReference _jumpInput;
 
     private Vector2 _moveDirection;
 
     private bool _moveInputtedThisFrame;
 
     private bool _jumpInputted;
+
+    public UnityEvent LeftInput;
+
+    public UnityEvent RightInput;
 
 
     private void Start()
@@ -30,19 +32,19 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         // record inputs
-        _moveDirection = _move.action.ReadValue<Vector2>();
-        _moveInputtedThisFrame = _move.action.WasPressedThisFrame();
-        _jumpInputted = _jump.action.IsPressed();
+        _moveDirection = _moveInput.action.ReadValue<Vector2>();
+        _moveInputtedThisFrame = _moveInput.action.WasPressedThisFrame();
+        _jumpInputted = _jumpInput.action.IsPressed();
 
         Vector3 newPosition = gameObject.transform.position;
         // make player move
         if (_moveInputtedThisFrame && _moveDirection.x < 0)
         {
-            newPosition.x -= _laneWidth;
+            LeftInput.Invoke();
         }
         else if (_moveInputtedThisFrame && _moveDirection.x > 0)
         {
-            newPosition.x += _laneWidth;
+            RightInput.Invoke();
         }
         gameObject.transform.position = newPosition;
     }
