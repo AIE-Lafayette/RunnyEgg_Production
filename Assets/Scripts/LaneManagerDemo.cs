@@ -6,7 +6,7 @@ using UnityEngine;
 public class LaneManagerDemo : MonoBehaviour
 {
     [SerializeField]
-    private GameObject _player;
+    private Transform _playerTransform;
 
     [SerializeField]
     private Vector3[] _lanePositions;
@@ -16,7 +16,7 @@ public class LaneManagerDemo : MonoBehaviour
 
     public void Start()
     {
-        _player.transform.position = _lanePositions[_playerLaneIndex];
+        _playerTransform.position = _lanePositions[_playerLaneIndex];
     }
 
     /// <summary>
@@ -40,9 +40,9 @@ public class LaneManagerDemo : MonoBehaviour
             return;
 
         _playerLaneIndex--;
-        _player.transform.position = _lanePositions[_playerLaneIndex];
+        _playerTransform.position = _lanePositions[_playerLaneIndex];
         Debug.Log(_playerLaneIndex);
-        Debug.Log(_player.transform.position);
+        Debug.Log(_playerTransform.position);
     }
 
     public void MovePlayerRight()
@@ -51,8 +51,8 @@ public class LaneManagerDemo : MonoBehaviour
             return;
 
         _playerLaneIndex++;
-        _player.transform.position = _lanePositions[_playerLaneIndex];
+        _playerTransform.position = _lanePositions[_playerLaneIndex];
         Debug.Log(_playerLaneIndex);
-        Debug.Log(_player.transform.position);
+        Debug.Log(_playerTransform.position);
     }
 }
