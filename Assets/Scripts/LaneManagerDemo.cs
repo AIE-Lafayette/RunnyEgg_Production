@@ -32,6 +32,8 @@ public class LaneManagerDemo : MonoBehaviour
             return new Vector3();
     }
 
+    // this stuff down here doesnt work at all and i really don't feel like fixing it
+    // especially since this is  a demo script of how it *could* work. i mean,, it sets the values ??  that's fine enough i guess
     public void MovePlayerLeft()
     {
         if (_playerLaneIndex <= 0)
