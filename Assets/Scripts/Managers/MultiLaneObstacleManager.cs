@@ -6,6 +6,9 @@ public class MultiLaneObstacleManager : MonoBehaviour
 {
     public LaneManager _laneManager;
 
+    [SerializeField]
+    private float _obstacleSpeed = 5.0f;
+
     void Start()
     {
         _laneManager.SetupGameLanes();
@@ -15,8 +18,6 @@ public class MultiLaneObstacleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 newPosition = transform.position;
-
-        newPosition += Vector3.back * Time.deltaTime;
+        transform.position = transform.position + (Vector3.back * _obstacleSpeed) * Time.deltaTime;
     }
 }

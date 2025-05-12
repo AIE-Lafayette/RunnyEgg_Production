@@ -245,6 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _laneManager: {fileID: 419847871}
+  _obstacleSpeed: 5
 --- !u!114 &419847871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -879,7 +880,7 @@ Transform:
   m_GameObject: {fileID: 1977174253}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 0.5, z: 46.62}
+  m_LocalPosition: {x: -2, y: 0.5, z: 50}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -895,7 +896,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 571640735811243125, guid: 8532ade0ce987754680436e1cdd04551, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2060831871218181097, guid: 8532ade0ce987754680436e1cdd04551, type: 3}
       propertyPath: m_LocalPosition.x
@@ -903,7 +904,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4569999889975508768, guid: 8532ade0ce987754680436e1cdd04551, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6722982950732858378, guid: 8532ade0ce987754680436e1cdd04551, type: 3}
       propertyPath: m_LocalPosition.x
@@ -915,7 +916,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6722982950732858378, guid: 8532ade0ce987754680436e1cdd04551, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 13.28
+      value: -8.28
       objectReference: {fileID: 0}
     - target: {fileID: 6722982950732858378, guid: 8532ade0ce987754680436e1cdd04551, type: 3}
       propertyPath: m_LocalRotation.w
@@ -951,7 +952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8302540865357267084, guid: 8532ade0ce987754680436e1cdd04551, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8525683717694239437, guid: 8532ade0ce987754680436e1cdd04551, type: 3}
       propertyPath: m_LocalPosition.x
