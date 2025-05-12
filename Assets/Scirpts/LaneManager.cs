@@ -46,7 +46,7 @@ public class LaneManager : MonoBehaviour
         else { return 0; }
     }
 
-    void SetObstacleLane(int laneNumber)
+    public void SetObstacleLane(int laneNumber)
     {
         switch (laneNumber)
         {
