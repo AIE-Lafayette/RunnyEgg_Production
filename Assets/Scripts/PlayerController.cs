@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
         _moveInputtedThisFrame = _moveInput.action.WasPressedThisFrame();
         _jumpInputted = _jumpInput.action.IsPressed();
 
-        // make player move
+        // if the player inputted left or right, call the relevant UnityEvent
         if (_moveInputtedThisFrame && _moveDirection.x < 0)
         {
             LeftInput.Invoke();
@@ -69,12 +69,15 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        bool rayResult = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 2.0f, LayerMask.NameToLayer("Ground"));
+        // check if player is touching the ground
+        bool rayResult = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.0f, LayerMask.NameToLayer("Ground"));
 
+        // if the player is really grounded and the ground check timer is done and the grounded bool is wrong, set isGrounded to true
         if (_groundCheckTimer <= 0.0f && !_isGrounded && rayResult)
         {
             _isGrounded = true;
         }
+        // otherwise, if the player is grounded and jump has been inputted, jump and set isGrounded to false
         else if (_isGrounded && _jumpInputted)
         {
             _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.VelocityChange);
