@@ -1013,9 +1013,9 @@ MonoBehaviour:
   _playerTransform: {fileID: 1307358848}
   _lanePositions:
   - {x: -3, y: 0, z: 0}
-  - {x: 0, y: 1, z: 0}
+  - {x: 0, y: 0, z: 0}
   - {x: 3, y: 0, z: 0}
-  _playerLaneIndex: 0
+  _playerLaneIndex: 1
 --- !u!4 &1976393376
 Transform:
   m_ObjectHideFlags: 0

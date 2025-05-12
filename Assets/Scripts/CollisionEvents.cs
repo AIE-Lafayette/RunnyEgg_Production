@@ -5,43 +5,43 @@ using UnityEngine.Events;
 
 public class CollisionEvents : MonoBehaviour
 {
-    public UnityEvent OnCollisionEnterEvent;
-    public UnityEvent OnCollisionStayEvent;
-    public UnityEvent OnCollisionExitEvent;
+    public UnityEvent<Collision> OnCollisionEnterEvent;
+    public UnityEvent<Collision> OnCollisionStayEvent;
+    public UnityEvent<Collision> OnCollisionExitEvent;
 
-    public UnityEvent OnTriggerEnterEvent;
-    public UnityEvent OnTriggerStayEvent;
-    public UnityEvent OnTriggerExitEvent;
+    public UnityEvent<Collider> OnTriggerEnterEvent;
+    public UnityEvent<Collider> OnTriggerStayEvent;
+    public UnityEvent<Collider> OnTriggerExitEvent;
 
     private void OnCollisionEnter(Collision collision)
     {
-        OnCollisionEnterEvent.Invoke();
+        OnCollisionEnterEvent.Invoke(collision);
     }
 
     private void OnCollisionStay(Collision collision)
     {
-        OnCollisionStayEvent.Invoke();
+        OnCollisionStayEvent.Invoke(collision);
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        OnCollisionExitEvent.Invoke();
+        OnCollisionExitEvent.Invoke(collision);
     }
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-        OnTriggerEnterEvent.Invoke();
+        OnTriggerEnterEvent.Invoke(other);
     }
 
     private void OnTriggerStay(Collider other)
     {
-        OnTriggerStayEvent.Invoke();
+        OnTriggerStayEvent.Invoke(other);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        OnTriggerExitEvent.Invoke();
+        OnTriggerExitEvent.Invoke(other);
     }
 }
