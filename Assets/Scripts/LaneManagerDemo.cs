@@ -14,9 +14,22 @@ public class LaneManagerDemo : MonoBehaviour
     [SerializeField]
     private int _playerLaneIndex;
 
+    private int _lastPlayerLaneIndex;
+
     public void Start()
     {
         _playerTransform.position = _lanePositions[_playerLaneIndex];
+    }
+
+    public void Update()
+    {
+        if (_lastPlayerLaneIndex != _playerLaneIndex)
+        {
+            _lastPlayerLaneIndex = _playerLaneIndex;
+            Vector3 newPosition = _playerTransform.position;
+            newPosition.x = _lanePositions[_playerLaneIndex].x;
+            _playerTransform.position = newPosition;
+        }
     }
 
     /// <summary>
@@ -40,9 +53,6 @@ public class LaneManagerDemo : MonoBehaviour
             return;
 
         _playerLaneIndex--;
-        _playerTransform.position = _lanePositions[_playerLaneIndex];
-        Debug.Log(_playerLaneIndex);
-        Debug.Log(_playerTransform.position);
     }
 
     public void MovePlayerRight()
@@ -51,8 +61,5 @@ public class LaneManagerDemo : MonoBehaviour
             return;
 
         _playerLaneIndex++;
-        _playerTransform.position = _lanePositions[_playerLaneIndex];
-        Debug.Log(_playerLaneIndex);
-        Debug.Log(_playerTransform.position);
     }
 }
