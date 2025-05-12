@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _jumpForce = 10.0f;
 
+    [SerializeField]
+    private float _groundCheckDelay = 0.25f;
+
     Rigidbody _rigidbody;
 
     private Vector2 _moveDirection;
@@ -25,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private bool _jumpInputted;
 
     private bool _isGrounded;
+
+    private float _groundCheckTimer;
 
     public UnityEvent LeftInput;
 
@@ -43,12 +48,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (_groundCheckTimer >= 0.0f)
+            _groundCheckTimer -= Time.deltaTime;
+
         // record inputs
         _moveDirection = _moveInput.action.ReadValue<Vector2>();
         _moveInputtedThisFrame = _moveInput.action.WasPressedThisFrame();
         _jumpInputted = _jumpInput.action.IsPressed();
 
-        Vector3 newPosition = gameObject.transform.position;
         // make player move
         if (_moveInputtedThisFrame && _moveDirection.x < 0)
         {
@@ -58,20 +65,21 @@ public class PlayerController : MonoBehaviour
         {
             RightInput.Invoke();
         }
-        gameObject.transform.position = newPosition;
     }
 
     private void FixedUpdate()
     {
-        if (!_isGrounded)
+        bool rayResult = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 2.0f, LayerMask.NameToLayer("Ground"));
+
+        if (_groundCheckTimer <= 0.0f && !_isGrounded && rayResult)
         {
-            if (Physics.Raycast(transform.position, Vector3.down, 20.0f, LayerMask.NameToLayer("Floor")))
-                _isGrounded = true;
+            _isGrounded = true;
         }
-        else if (_jumpInputted)
+        else if (_isGrounded && _jumpInputted)
         {
             _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.VelocityChange);
             _isGrounded = false;
+            _groundCheckTimer = _groundCheckDelay;
         }
     }
 }

@@ -867,7 +867,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveInput: {fileID: -1133609675643740850, guid: 6bac7c3e74f321644ad1595d945af585, type: 3}
   _jumpInput: {fileID: 637072120847556604, guid: 6bac7c3e74f321644ad1595d945af585, type: 3}
-  _jumpForce: 20
+  _jumpForce: 8
+  _groundCheckDelay: 0.25
   LeftInput:
     m_PersistentCalls:
       m_Calls:

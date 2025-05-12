@@ -21,17 +21,6 @@ public class LaneManagerDemo : MonoBehaviour
         _playerTransform.position = _lanePositions[_playerLaneIndex];
     }
 
-    public void Update()
-    {
-        if (_lastPlayerLaneIndex != _playerLaneIndex)
-        {
-            _lastPlayerLaneIndex = _playerLaneIndex;
-            Vector3 newPosition = _playerTransform.position;
-            newPosition.x = _lanePositions[_playerLaneIndex].x;
-            _playerTransform.position = newPosition;
-        }
-    }
-
     /// <summary>
     /// Gets the position of the lane in the given index.
     /// </summary>
@@ -53,6 +42,9 @@ public class LaneManagerDemo : MonoBehaviour
             return;
 
         _playerLaneIndex--;
+        Vector3 newPosition = _playerTransform.position;
+        newPosition.x = _lanePositions[_playerLaneIndex].x;
+        _playerTransform.position = newPosition;
     }
 
     public void MovePlayerRight()
@@ -61,5 +53,8 @@ public class LaneManagerDemo : MonoBehaviour
             return;
 
         _playerLaneIndex++;
+        Vector3 newPosition = _playerTransform.position;
+        newPosition.x = _lanePositions[_playerLaneIndex].x;
+        _playerTransform.position = newPosition;
     }
 }
