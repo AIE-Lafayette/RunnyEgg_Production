@@ -34,8 +34,9 @@ public class LaneManagerDemo : MonoBehaviour
             return new Vector3();
     }
 
-    // this stuff down here       work at all and i really               fix   it
-    //                            demo script                  work.          it sets the values            fine 
+    // the two functions down here move the player's lane index to the left and right respectively
+    // they also move the player to the position the player's new lane is in
+    // if there's no valid lane to move to, they simply return without doing anything
     public void MovePlayerLeft()
     {
         if (_playerLaneIndex <= 0)
