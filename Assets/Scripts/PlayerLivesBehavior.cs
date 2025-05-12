@@ -5,12 +5,13 @@ using UnityEngine.Events;
 
 public class PlayerLivesBehavior : MonoBehaviour
 {
+    [SerializeField]
+    private int _lives;
+
     public UnityEvent OnLifeLost;
 
     public UnityEvent OnAllLivesLost;
 
-    [SerializeField]
-    private int _lives;
 
     public int Lives { get => _lives; }
 
