@@ -14,8 +14,6 @@ public class LaneManagerDemo : MonoBehaviour
     [SerializeField]
     private int _playerLaneIndex;
 
-    private int _lastPlayerLaneIndex;
-
     public void Start()
     {
         _playerTransform.position = _lanePositions[_playerLaneIndex];
