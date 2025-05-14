@@ -43,6 +43,7 @@ public class LaneManagerDemo : MonoBehaviour
         _playerLaneIndex--;
         Vector3 newPosition = _playerTransform.position;
         newPosition.x = _lanePositions[_playerLaneIndex].x;
+        newPosition.z = _lanePositions[_playerLaneIndex].z;
         _playerTransform.position = newPosition;
     }
 
@@ -54,6 +55,7 @@ public class LaneManagerDemo : MonoBehaviour
         _playerLaneIndex++;
         Vector3 newPosition = _playerTransform.position;
         newPosition.x = _lanePositions[_playerLaneIndex].x;
+        newPosition.z = _lanePositions[_playerLaneIndex].z;
         _playerTransform.position = newPosition;
     }
 }
