@@ -6,37 +6,87 @@ using UnityEngine;
 
 public class LaneManager : MonoBehaviour
 {
-    //Instance creation for 
-    //public static LaneManager instance;
-
     Vector3[] _gameLanes;
     Vector3[] _laneSpawnPositions;
 
-    protected int _laneAmount = 3;
+    private int _laneAmount = 3;
 
-    protected static Vector3 _startPositionModifier = new Vector3(0, 0, 15);
+    private static Vector3 _startPositionModifier = new Vector3(0, 0, 15);
 
-    protected static Vector3 _leftLane = new Vector3(-2,0.5f,0);
-    protected static Vector3 _leftLaneStartPosition = _leftLane + _startPositionModifier;
+    private static Vector3 _leftLane = new Vector3(-2, 0.5f, 0);
+    private static Vector3 _leftLaneStartPosition = _leftLane + _startPositionModifier;
 
-    protected static Vector3 _middleLane = new Vector3(0,0.5f,0);
-    protected static Vector3 _middleLaneStartPosition = _middleLane + _startPositionModifier;
+    private static Vector3 _middleLane = new Vector3(0, 0.5f, 0);
+    private static Vector3 _middleLaneStartPosition = _middleLane + _startPositionModifier;
 
-    protected static Vector3 _rightLane = new Vector3(2,0.5f,0);
-    protected static Vector3 _rightLaneStartPosition = _rightLane + _startPositionModifier;
+    private static Vector3 _rightLane = new Vector3(2, 0.5f, 0);
+    private static Vector3 _rightLaneStartPosition = _rightLane + _startPositionModifier;
 
+    private static Vector3 _destroyZone = new Vector3(0, 0, -5);
+
+
+    public int GetLaneAmount()
+    {
+        return _laneAmount;
+    }
+
+    public Vector3 GetLeftLane()
+    {
+        return _leftLane;
+    }
+
+    public Vector3 GetLeftLaneStartPos()
+    {
+        return _leftLaneStartPosition;
+    }
+
+    public Vector3 GetMiddleLane()
+    {
+        return _middleLane;
+    }
+
+    public Vector3 GetMiddleLaneStartPos()
+    {
+        return _middleLaneStartPosition;
+    }
+
+    public Vector3 GetRightLane()
+    {
+        return _rightLane;
+    }
+
+    public Vector3 GetRightLaneStartPos()
+    {
+        return _rightLaneStartPosition;
+    }
+
+    public Vector3 GetDestroyZone()
+    {
+        return _destroyZone;
+    }
+        
+    //Establishes the positions and indexes of the three lanes in the game
     public void SetupGameLanes()
     {
-        _gameLanes = new Vector3[_laneAmount];
-        _gameLanes[0] = _leftLane;
-        _gameLanes[1] = _middleLane;
-        _gameLanes[2] = _rightLane;
+        _gameLanes = new Vector3[GetLaneAmount()];
+        _gameLanes[0] = GetLeftLane();
+        _gameLanes[1] = GetMiddleLane();
+        _gameLanes[2] = GetRightLane();
 
 
-        _laneSpawnPositions = new Vector3[_laneAmount];
-        _laneSpawnPositions[0] = _leftLaneStartPosition;
-        _laneSpawnPositions[1] = _middleLaneStartPosition;
-        _laneSpawnPositions[2] = _rightLaneStartPosition;
+        _laneSpawnPositions = new Vector3[GetLaneAmount()];
+        _laneSpawnPositions[0] = GetLeftLaneStartPos();
+        _laneSpawnPositions[1] = GetMiddleLaneStartPos();
+        _laneSpawnPositions[2] = GetRightLaneStartPos();
+    }
+
+    public Vector3 GetRandomLane()
+    {
+        SetupGameLanes();
+        int laneIndex = UnityEngine.Random.Range(0, GetLaneAmount());
+        Vector3 randomLanePosition = new Vector3(_laneSpawnPositions[laneIndex].x, _laneSpawnPositions[laneIndex].y, _laneSpawnPositions[laneIndex].z);
+
+        return randomLanePosition;
     }
 
     int GetPlayerLane()

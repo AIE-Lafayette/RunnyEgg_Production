@@ -12,34 +12,39 @@ public class MultiLaneObstacleManager : MonoBehaviour
     [SerializeField]
     private float _obstacleSpeed = 5.0f;
 
+    //Fields for the seconds that determine spawn rates
     [SerializeField]
-    private float _obstacleStartDelay = 5.0f;
+    private float _obstacleStartDelay = 5;
+    [SerializeField]
+    private float _obstacleSpawnInterval = 4;
 
     [SerializeField]
-    private float _obstacleSpawnInterval = 4.0f;
+    private bool _isGameStarted = true;
 
-    private bool _isGameStarted = false;
+    private int _index;
+
+    int GetRandomIndex()
+    {
+        int indexOutput = Random.Range(0, _obstaclePrefabs.Length);
+        return indexOutput;
+    }
+
+    void MoveObstacles(int positionIndex)
+    {
+        _obstaclePrefabs[positionIndex].transform.position = transform.position + (Vector3.back * _obstacleSpeed) * Time.deltaTime;
+    }
 
     void SpawnObstacles()
     {
-        _laneManager.SetupGameLanes();
-        int obstacleIndex = Random.Range(0, _obstaclePrefabs.Length);
-
-        //int spawnPositionIndex = Random.Range(0, _laneManager._laneAmount + 1);
-        //Vector3 spawnPosition = new Vector3(_laneSpawnPositions[spawnPositionIndex].x, _laneSpawnPositions[spawnPositionIndex].y, _laneSpawnPositions[spawnPositionIndex].z);
-        //Instantiate()
-    }
-
-    void MoveObstacles()
-    {
-        transform.position = transform.position + (Vector3.back * _obstacleSpeed) * Time.deltaTime;
+        _index = GetRandomIndex();
+        Instantiate(_obstaclePrefabs[_index], _laneManager.GetRandomLane(), _obstaclePrefabs[_index].transform.rotation);
+        
     }
 
     void Start()
     {
-        if (_isGameStarted == false)
+        if (_isGameStarted == true)
         {
-            _isGameStarted = true;
             InvokeRepeating("SpawnObstacles", _obstacleStartDelay, _obstacleSpawnInterval);
         }
 
@@ -47,6 +52,6 @@ public class MultiLaneObstacleManager : MonoBehaviour
 
     void Update()
     {
-        MoveObstacles();
+        MoveObstacles(_index);
     }
 }
