@@ -7,12 +7,12 @@ public class ScoreManager : MonoBehaviour
     private double _score = 0;
 
     [SerializeField]
-    private double _distanceScoreIncreaseAmount;
+    private double _scoreIncreaseByTime;
 
     [SerializeField]
-    private float _distanceScoreIncreaseDelay;
+    private float _scoreIncreaseDelay;
 
-    private float _distanceScoreIncreaseTimer;
+    private float _scoreIncreaseTimer;
 
     public double Score { get => _score; }
 
@@ -20,18 +20,18 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        _distanceScoreIncreaseTimer = _distanceScoreIncreaseDelay;
+        _scoreIncreaseTimer = _scoreIncreaseDelay;
     }
 
     private void Update()
     {
-        if (_distanceScoreIncreaseTimer <= 0)
+        if (_scoreIncreaseTimer <= 0)
         {
-            AddScore(_distanceScoreIncreaseAmount);
-            _distanceScoreIncreaseTimer = _distanceScoreIncreaseDelay;
+            AddScore(_scoreIncreaseByTime);
+            _scoreIncreaseTimer = _scoreIncreaseDelay;
         }
         else
-            _distanceScoreIncreaseTimer -= Time.deltaTime;
+            _scoreIncreaseTimer -= Time.deltaTime;
 
 
         Debug.Log("Score: " + _score);
