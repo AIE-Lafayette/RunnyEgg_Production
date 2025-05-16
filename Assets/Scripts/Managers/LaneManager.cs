@@ -11,7 +11,7 @@ public class LaneManager : MonoBehaviour
 
     private int _laneAmount = 3;
 
-    private static Vector3 _startPositionModifier = new Vector3(0, 0, 15);
+    private static Vector3 _startPositionModifier = new Vector3(0, 0, 25);
 
     private static Vector3 _leftLane = new Vector3(-2, 0.5f, 0);
     private static Vector3 _leftLaneStartPosition = _leftLane + _startPositionModifier;
@@ -60,9 +60,9 @@ public class LaneManager : MonoBehaviour
         return _rightLaneStartPosition;
     }
 
-    public Vector3 GetDestroyZone()
+    public float GetDestroyZone()
     {
-        return _destroyZone;
+        return _destroyZone.z;
     }
         
     //Establishes the positions and indexes of the three lanes in the game
@@ -114,28 +114,11 @@ public class LaneManager : MonoBehaviour
     //Sets an obstacle's lane to one of the three positions.
     //The parameter int laneNumber determines which lane the obstacle gets set to.
     //1 is the leftmost lane, 2 is the middle lane, 3 is the rightmost lane.
-    public void SetObstacleLane(int laneNumber)
+    public Vector3 SetObstacleLane()
     {
-        switch (laneNumber)
-        {
-            case 1:
-                transform.position = _laneSpawnPositions[0];
-                break;
 
-            case 2:
-                transform.position = _laneSpawnPositions[1];
-                break;
 
-            case 3:
-                transform.position = _laneSpawnPositions[2];
-                break;
-
-            //sets the middle lane to be the default
-            default:
-                transform.position = _laneSpawnPositions[1];
-                return;
-
-        }
+        return new Vector3();
     }
 
     void SetPlayerLane(int laneNumber)

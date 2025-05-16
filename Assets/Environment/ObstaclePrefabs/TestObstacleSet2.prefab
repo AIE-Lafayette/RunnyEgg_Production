@@ -118,9 +118,10 @@ GameObject:
   - component: {fileID: 7122124427417895511}
   - component: {fileID: 8308106235598949616}
   - component: {fileID: 6920325461177413669}
+  - component: {fileID: 7631894750051047866}
   m_Layer: 0
   m_Name: TestObstacleSet2
-  m_TagString: Untagged
+  m_TagString: MiddleFillingObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,6 +227,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleSpeed: 5
+--- !u!114 &7631894750051047866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5262394070815000825}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2848531e46b469b4583f4c4ffe806c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7307349120664688457
 GameObject:
   m_ObjectHideFlags: 0
