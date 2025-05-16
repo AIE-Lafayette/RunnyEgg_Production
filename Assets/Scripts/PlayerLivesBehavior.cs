@@ -30,7 +30,6 @@ public class PlayerLivesBehavior : MonoBehaviour
     {
         // Decrement lives, then invoke OnAllLivesLost if lives are less than or equal to 0, or OnLifeLost if not. 
         _lives--;
-        Debug.Log("lifema lost");
         
         if (_lives <= 0)
         {
@@ -39,13 +38,14 @@ public class PlayerLivesBehavior : MonoBehaviour
         else
         {
             OnLifeLost.Invoke();
-            _invincibilityFramesTimer = _invincibilityFramesDuration;
         }
+
+        _invincibilityFramesTimer = _invincibilityFramesDuration;
     }
 
-    public void Hurt(Collision collision)
+    // if the player comes in contact with an obstacle and doesn't have invincibility frames, player loses a life
+    private void OnCollisionEnter(Collision collision)
     {
-        // Guard clause
         if (_invincibilityFramesTimer > 0)
             return;
 
