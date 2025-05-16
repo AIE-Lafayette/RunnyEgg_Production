@@ -28,10 +28,6 @@ public class PlayerLivesBehavior : MonoBehaviour
 
     public void LoseLife()
     {
-        // Guard clause
-        if (_invincibilityFramesTimer > 0)
-            return;
-
         // Decrement lives, then invoke OnAllLivesLost if lives are less than or equal to 0, or OnLifeLost if not. 
         _lives--;
         
@@ -44,5 +40,15 @@ public class PlayerLivesBehavior : MonoBehaviour
             OnLifeLost.Invoke();
             _invincibilityFramesTimer = _invincibilityFramesDuration;
         }
+    }
+
+    public void Hurt(Collision collision)
+    {
+        // Guard clause
+        if (_invincibilityFramesTimer > 0)
+            return;
+
+        if (collision.gameObject.tag == "Obstacle")
+            LoseLife();
     }
 }
