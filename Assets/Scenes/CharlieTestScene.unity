@@ -1061,8 +1061,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d60b8406e9b00d4ab4dc5adc772820a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _distanceScoreIncreaseAmount: 5
-  _distanceScoreIncreaseDelay: 1
+  _scoreIncreaseAmount: 5
+  _scoreIncreaseDelay: 1
 --- !u!4 &2050587417
 Transform:
   m_ObjectHideFlags: 0
