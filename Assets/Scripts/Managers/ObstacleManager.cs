@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MultiLaneObstacleManager : MonoBehaviour
+public class ObstacleManager : MonoBehaviour
 {
     //Instance of the LaneManager class to make use of the lane positions
     public LaneManager _laneManager;
 
     public GameObject[] _obstaclePrefabs;
-
-    [SerializeField]
-    private float _obstacleSpeed = 5.0f;
 
     //Fields for the seconds that determine spawn rates
     [SerializeField]
@@ -21,24 +18,16 @@ public class MultiLaneObstacleManager : MonoBehaviour
     [SerializeField]
     private bool _isGameStarted = true;
 
-    private int _index;
-
-    int GetRandomIndex()
+    private int GetRandomIndex()
     {
         int indexOutput = Random.Range(0, _obstaclePrefabs.Length);
         return indexOutput;
     }
 
-    void MoveObstacles(int positionIndex)
+    private void SpawnObstacles()
     {
-        _obstaclePrefabs[positionIndex].transform.position = transform.position + (Vector3.back * _obstacleSpeed) * Time.deltaTime;
-    }
-
-    void SpawnObstacles()
-    {
-        _index = GetRandomIndex();
-        Instantiate(_obstaclePrefabs[_index], _laneManager.GetRandomLane(), _obstaclePrefabs[_index].transform.rotation);
-        
+        int index = GetRandomIndex();
+        Instantiate(_obstaclePrefabs[index], _laneManager.GetRandomLane(), _obstaclePrefabs[index].transform.rotation);
     }
 
     void Start()
@@ -47,11 +36,5 @@ public class MultiLaneObstacleManager : MonoBehaviour
         {
             InvokeRepeating("SpawnObstacles", _obstacleStartDelay, _obstacleSpawnInterval);
         }
-
-    }
-
-    void Update()
-    {
-        MoveObstacles(_index);
     }
 }
