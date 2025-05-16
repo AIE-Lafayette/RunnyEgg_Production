@@ -34,6 +34,7 @@ public class PlayerLivesBehavior : MonoBehaviour
         if (_lives <= 0)
         {
             OnAllLivesLost.Invoke();
+            Destroy(gameObject);
         }
         else
         {
