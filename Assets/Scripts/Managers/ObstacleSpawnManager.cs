@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleManager : MonoBehaviour
+public class ObstacleSpawnManager : MonoBehaviour
 {
     //Instance of the LaneManager class to make use of the lane positions
     public LaneManager _laneManager;
