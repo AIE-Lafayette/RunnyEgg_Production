@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
     private double _score = 0;
 
     [SerializeField]
-    private double _scoreIncreaseByTime;
+    private double _scoreIncreaseAmount;
 
     [SerializeField]
     private float _scoreIncreaseDelay;
@@ -27,7 +27,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (_scoreIncreaseTimer <= 0)
         {
-            AddScore(_scoreIncreaseByTime);
+            AddScore(_scoreIncreaseAmount);
             _scoreIncreaseTimer = _scoreIncreaseDelay;
         }
         else
