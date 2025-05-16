@@ -32,8 +32,5 @@ public class ScoreManager : MonoBehaviour
         }
         else
             _scoreIncreaseTimer -= Time.deltaTime;
-
-
-        Debug.Log("Score: " + _score);
     }
 }

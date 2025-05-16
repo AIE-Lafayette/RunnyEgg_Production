@@ -30,6 +30,7 @@ public class PlayerLivesBehavior : MonoBehaviour
     {
         // Decrement lives, then invoke OnAllLivesLost if lives are less than or equal to 0, or OnLifeLost if not. 
         _lives--;
+        Debug.Log("lifema lost");
         
         if (_lives <= 0)
         {
