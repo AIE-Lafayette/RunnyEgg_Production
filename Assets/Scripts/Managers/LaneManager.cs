@@ -112,13 +112,20 @@ public class LaneManager : MonoBehaviour
     }
 
     //Sets an obstacle's lane to one of the three positions.
-    //The parameter int laneNumber determines which lane the obstacle gets set to.
-    //1 is the leftmost lane, 2 is the middle lane, 3 is the rightmost lane.
     public Vector3 SetObstacleLane()
     {
+        Vector3 determinedLane = new Vector3();
 
+        if (gameObject.CompareTag("MiddleFillingObstacle"))
+        {
+            determinedLane = GetMiddleLaneStartPos();
+        }
+        else if (gameObject.CompareTag("Obstacle"))
+        {
+            determinedLane = GetRandomLane();
+        }
 
-        return new Vector3();
+        return determinedLane;
     }
 
     void SetPlayerLane(int laneNumber)

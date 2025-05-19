@@ -27,7 +27,7 @@ public class ObstacleSpawnManager : MonoBehaviour
     private void SpawnObstacles()
     {
         int index = GetRandomIndex();
-        Instantiate(_obstaclePrefabs[index], _laneManager.GetRandomLane(), _obstaclePrefabs[index].transform.rotation);
+        Instantiate(_obstaclePrefabs[index], _laneManager.SetObstacleLane(), _obstaclePrefabs[index].transform.rotation);
     }
 
     void Start()
