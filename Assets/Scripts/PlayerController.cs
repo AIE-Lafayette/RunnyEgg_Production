@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // check if player is touching the ground
-        bool rayResult = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.0f, LayerMask.NameToLayer("Ground"));
+        bool rayResult = Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), 1.0f, 1 << LayerMask.NameToLayer("Floor"));
 
         // if the player is really grounded and the ground check timer is done and the grounded bool is wrong, set isGrounded to true
         if (_groundCheckTimer <= 0.0f && !_isGrounded && rayResult)

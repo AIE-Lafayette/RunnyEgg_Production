@@ -14,8 +14,6 @@ public class LaneManagerDemo : MonoBehaviour
     [SerializeField]
     private int _playerLaneIndex;
 
-    private int _lastPlayerLaneIndex;
-
     public void Start()
     {
         _playerTransform.position = _lanePositions[_playerLaneIndex];
@@ -45,6 +43,7 @@ public class LaneManagerDemo : MonoBehaviour
         _playerLaneIndex--;
         Vector3 newPosition = _playerTransform.position;
         newPosition.x = _lanePositions[_playerLaneIndex].x;
+        newPosition.z = _lanePositions[_playerLaneIndex].z;
         _playerTransform.position = newPosition;
     }
 
@@ -56,6 +55,7 @@ public class LaneManagerDemo : MonoBehaviour
         _playerLaneIndex++;
         Vector3 newPosition = _playerTransform.position;
         newPosition.x = _lanePositions[_playerLaneIndex].x;
+        newPosition.z = _lanePositions[_playerLaneIndex].z;
         _playerTransform.position = newPosition;
     }
 }
