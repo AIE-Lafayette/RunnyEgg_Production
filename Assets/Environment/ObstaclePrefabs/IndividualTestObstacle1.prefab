@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 277845b5dcc06514b9f1f5f681d7b4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _laneManager: {fileID: 1899629176981053128}
   _obstacleSpeed: 5
 --- !u!114 &1899629176981053128
 MonoBehaviour:
