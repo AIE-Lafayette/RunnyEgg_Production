@@ -38,5 +38,7 @@ public class UIManagerDemo : MonoBehaviour
 
         if (_playerLivesText && _playerLives)
             _playerLivesText.text = _playerLives.Lives.ToString("Lives: 0");
+        else
+            _playerLivesText.text = "Lives: 0";
     }
 }

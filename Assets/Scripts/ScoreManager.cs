@@ -33,4 +33,9 @@ public class ScoreManager : MonoBehaviour
         else
             _scoreIncreaseTimer -= Time.deltaTime;
     }
+
+    public void StopScore()
+    {
+        _scoreIncreaseAmount = 0;
+    }
 }
