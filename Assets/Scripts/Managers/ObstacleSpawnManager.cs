@@ -26,8 +26,20 @@ public class ObstacleSpawnManager : MonoBehaviour
 
     private void SpawnObstacles()
     {
+        //Generates an interger that determines which obstacle prefab spawns in this instance of the function
         int index = GetRandomIndex();
-        Instantiate(_obstaclePrefabs[index], _laneManager.GetRandomLane(), _obstaclePrefabs[index].transform.rotation);
+        Vector3 obstaclePosition = new Vector3();
+
+        if (_obstaclePrefabs[index].CompareTag("MiddleFillingObstacle"))
+        {
+            obstaclePosition = _laneManager.GetMiddleLaneStartPos();
+        }
+        else if (_obstaclePrefabs[index].CompareTag("Obstacle"))
+        {
+            obstaclePosition = _laneManager.GetRandomSpawnLane();
+        }
+
+        Instantiate(_obstaclePrefabs[index], obstaclePosition, _obstaclePrefabs[index].transform.rotation);
     }
 
     void Start()

@@ -13,13 +13,13 @@ public class LaneManager : MonoBehaviour
 
     private static Vector3 _startPositionModifier = new Vector3(0, 0, 25);
 
-    private static Vector3 _leftLane = new Vector3(-2, 0.5f, 0);
+    private static Vector3 _leftLane = new Vector3(-3, 0.5f, 0);
     private static Vector3 _leftLaneStartPosition = _leftLane + _startPositionModifier;
 
     private static Vector3 _middleLane = new Vector3(0, 0.5f, 0);
     private static Vector3 _middleLaneStartPosition = _middleLane + _startPositionModifier;
 
-    private static Vector3 _rightLane = new Vector3(2, 0.5f, 0);
+    private static Vector3 _rightLane = new Vector3(3, 0.5f, 0);
     private static Vector3 _rightLaneStartPosition = _rightLane + _startPositionModifier;
 
     private static Vector3 _destroyZone = new Vector3(0, 0, -5);
@@ -80,7 +80,7 @@ public class LaneManager : MonoBehaviour
         _laneSpawnPositions[2] = GetRightLaneStartPos();
     }
 
-    public Vector3 GetRandomLane()
+    public Vector3 GetRandomSpawnLane()
     {
         SetupGameLanes();
         int laneIndex = UnityEngine.Random.Range(0, GetLaneAmount());
@@ -94,21 +94,30 @@ public class LaneManager : MonoBehaviour
         return 0;
     }
 
-    Vector3 GetObstacleLane()
+    //Returns a float value that can be used as an obstacle's lane position
+    //Passing 1 as a parameter returns the left lane, 2 the middle lane, 3 the right lane
+    //The middle lane is returned on default
+    public float GetObstacleLane(int laneNumber)
     {
-        if (transform.position.x == _gameLanes[0].x)
+        float lanePosition;
+
+        switch (laneNumber)
         {
-            return _gameLanes[0];
+            case 1:
+                lanePosition = _gameLanes[0].x;
+                break;
+            case 2:
+                lanePosition = _gameLanes[1].x;
+                break;
+            case 3:
+                lanePosition = _gameLanes[2].x;
+                break;
+            default:
+                lanePosition = _gameLanes[1].x;
+                break;
         }
-        else if (transform.position.x == _gameLanes[1].x)
-        {
-            return _gameLanes[1];
-        }
-        else if (transform.position.x == _gameLanes[2].x)
-        {
-            return _gameLanes[2];
-        }
-        else { return new Vector3(); }
+
+        return lanePosition;
     }
 
     //Sets an obstacle's lane to one of the three positions.
@@ -122,7 +131,7 @@ public class LaneManager : MonoBehaviour
         }
         else if (gameObject.CompareTag("Obstacle"))
         {
-            determinedLane = GetRandomLane();
+            determinedLane = GetRandomSpawnLane();
         }
 
         return determinedLane;
