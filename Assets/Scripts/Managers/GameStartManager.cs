@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameStartManager : MonoBehaviour
 {
@@ -23,8 +24,12 @@ public class GameStartManager : MonoBehaviour
     private CameraTransform _gameplayCameraTransform;
 
     [SerializeField]
-    [Tooltip("The time it will take to move the camera at the start of the game <i>in frames.</i>")]
+    [Tooltip("The time it will take to move the camera at the start of the game <i>in frames.</i> This objectively sucks, but I don't know how make it work with Time.deltaTime. ):")]
     private uint _cameraMoveTime;
+
+    private bool _gameStarted = false;
+
+    public UnityEvent OnGameStart;
 
     private void Update()
     {
@@ -34,9 +39,16 @@ public class GameStartManager : MonoBehaviour
 
     public void StartGame()
     {
+        if (_gameStarted)
+            return;
+
         // preddy quickly but not instantly move the camera to the gameplay camera position & rotation
-        // coroutine would work really !
         StartCoroutine("MoveCamera");
+
+        OnGameStart.Invoke();
+
+        // make sure this function never happens again
+        _gameStarted = true;
     }
 
     private IEnumerator MoveCamera()

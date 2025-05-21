@@ -34,11 +34,9 @@ public class UIManagerDemo : MonoBehaviour
     private void Update()
     {
         if (_scoreText && _scoreManagerScript)
-            _scoreText.text = _scoreManagerScript.Score.ToString("Score: 000000");
+            _scoreText.text = _scoreManagerScript.Score.ToString("Score: 00000000");
 
         if (_playerLivesText && _playerLives)
             _playerLivesText.text = _playerLives.Lives.ToString("Lives: 0");
-        else
-            _playerLivesText.text = "Lives: 0";
     }
 }

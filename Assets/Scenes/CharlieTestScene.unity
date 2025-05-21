@@ -160,7 +160,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score: 000000'
+  m_text: 'Score: 00000000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -254,7 +254,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
   m_AnchoredPosition: {x: 0, y: -25}
-  m_SizeDelta: {x: 400, y: 50}
+  m_SizeDelta: {x: 450, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &190945610
 GameObject:
@@ -579,6 +579,7 @@ Transform:
   - {fileID: 1914549567}
   - {fileID: 2050587417}
   - {fileID: 1976393376}
+  - {fileID: 1813596156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &927477088
@@ -1220,19 +1221,7 @@ MonoBehaviour:
       m_Calls: []
   OnAllLivesLost:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2050587416}
-        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
-        m_MethodName: StopScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1307358851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1495,7 +1484,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 943894396}
-  - {fileID: 1813596156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1813596155
@@ -1523,12 +1511,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813596155}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1788215530}
+  m_Father: {fileID: 758066940}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1813596157
 MonoBehaviour:
@@ -1580,6 +1568,9 @@ MonoBehaviour:
     position: {x: 0, y: 5, z: -4}
     rotation: {x: 30, y: 0, z: 0}
   _cameraMoveTime: 100
+  OnGameStart:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1914549567
 Transform:
   m_ObjectHideFlags: 0
@@ -1676,6 +1667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreIncreaseAmount: 5
   _scoreIncreaseDelay: 1
+  _playerLives: {fileID: 1307358850}
 --- !u!4 &2050587417
 Transform:
   m_ObjectHideFlags: 0

@@ -14,6 +14,9 @@ public class ScoreManager : MonoBehaviour
 
     private float _scoreIncreaseTimer;
 
+    [SerializeField]
+    private PlayerLivesBehavior _playerLives;
+
     public double Score { get => _score; }
 
     public void AddScore(double score) { _score += score; }
@@ -25,6 +28,9 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
+        if (_playerLives.IsDead)
+            enabled = false;
+
         if (_scoreIncreaseTimer <= 0)
         {
             AddScore(_scoreIncreaseAmount);
@@ -32,10 +38,5 @@ public class ScoreManager : MonoBehaviour
         }
         else
             _scoreIncreaseTimer -= Time.deltaTime;
-    }
-
-    public void StopScore()
-    {
-        _scoreIncreaseAmount = 0;
     }
 }
