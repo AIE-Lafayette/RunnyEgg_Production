@@ -24,22 +24,31 @@ public class ObstacleSpawnManager : MonoBehaviour
         return indexOutput;
     }
 
+
+    //Sets an obstacle's lane to one of the three positions.
+    //The parameter 'index' is used to determine the prefab that is checked by the if statements
+    public Vector3 SetObstacleLane(int index)
+    {
+        Vector3 determinedLane = new Vector3();
+
+        if (_obstaclePrefabs[index].CompareTag("ThreeLaneObstacle"))
+        {
+            determinedLane = _laneManager.GetMiddleLaneStartPos();
+        }
+        else if (_obstaclePrefabs[index].CompareTag("OneLaneObstacle"))
+        {
+            determinedLane = _laneManager.GetRandomSpawnLane();
+        }
+
+        return determinedLane;
+    }
+
     private void SpawnObstacles()
     {
         //Generates an interger that determines which obstacle prefab spawns in this instance of the function
         int index = GetRandomIndex();
-        Vector3 obstaclePosition = new Vector3();
 
-        if (_obstaclePrefabs[index].CompareTag("MiddleFillingObstacle"))
-        {
-            obstaclePosition = _laneManager.GetMiddleLaneStartPos();
-        }
-        else if (_obstaclePrefabs[index].CompareTag("Obstacle"))
-        {
-            obstaclePosition = _laneManager.GetRandomSpawnLane();
-        }
-
-        Instantiate(_obstaclePrefabs[index], obstaclePosition, _obstaclePrefabs[index].transform.rotation);
+        Instantiate(_obstaclePrefabs[index], SetObstacleLane(index), _obstaclePrefabs[index].transform.rotation);
     }
 
     void Start()

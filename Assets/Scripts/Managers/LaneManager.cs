@@ -120,22 +120,7 @@ public class LaneManager : MonoBehaviour
         return lanePosition;
     }
 
-    //Sets an obstacle's lane to one of the three positions.
-    public Vector3 SetObstacleLane()
-    {
-        Vector3 determinedLane = new Vector3();
 
-        if (gameObject.CompareTag("MiddleFillingObstacle"))
-        {
-            determinedLane = GetMiddleLaneStartPos();
-        }
-        else if (gameObject.CompareTag("Obstacle"))
-        {
-            determinedLane = GetRandomSpawnLane();
-        }
-
-        return determinedLane;
-    }
 
     void SetPlayerLane(int laneNumber)
     {
