@@ -35,6 +35,29 @@ public class ObstacleSpawnManager : MonoBehaviour
         {
             determinedLane = _laneManager.GetMiddleLaneStartPos();
         }
+        //An object with the TwoLaneObstacle tag is an exception, and it is offset from the middle lane in order to occupy two lanes at once when instantiated
+        else if (_obstaclePrefabs[index].CompareTag("TwoLaneObstacle"))
+        {
+            Vector3 baselineVector = _laneManager.GetMiddleLaneStartPos();
+            Vector3 leftOffsetVector = Vector3.left * 2;
+            Vector3 rightOffsetVector = Vector3.right * 2;
+            int vectorDeterminer = Random.Range(1, 3);
+
+            switch (vectorDeterminer)
+            {
+                case 1:
+                    determinedLane = baselineVector + leftOffsetVector;
+                    break;
+                case 2:
+                    determinedLane = baselineVector + rightOffsetVector;
+                    break;
+                //Being offset into the left lane is the default position
+                default:
+                    determinedLane = baselineVector + leftOffsetVector;
+                    break;
+            }
+
+        }
         else if (_obstaclePrefabs[index].CompareTag("OneLaneObstacle"))
         {
             determinedLane = _laneManager.GetRandomSpawnLane();

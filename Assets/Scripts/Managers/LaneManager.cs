@@ -11,7 +11,7 @@ public class LaneManager : MonoBehaviour
 
     private int _laneAmount = 3;
 
-    private static Vector3 _startPositionModifier = new Vector3(0, 0, 25);
+    private static Vector3 _startPositionModifier = new Vector3(0, 0, 35);
 
     private static Vector3 _leftLane = new Vector3(-3, 0.5f, 0);
     private static Vector3 _leftLaneStartPosition = _leftLane + _startPositionModifier;
