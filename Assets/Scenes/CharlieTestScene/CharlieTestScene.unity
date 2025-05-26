@@ -733,7 +733,7 @@ GameObject:
   - component: {fileID: 1307358849}
   - component: {fileID: 1307358852}
   m_Layer: 0
-  m_Name: Player
+  m_Name: PrototypePlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,13 +846,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45afebcc18a432441b6f4397313fc5bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lives: 3
   OnLifeLost:
     m_PersistentCalls:
       m_Calls: []
   OnAllLivesLost:
     m_PersistentCalls:
       m_Calls: []
-  _lives: 3
 --- !u!114 &1307358851
 MonoBehaviour:
   m_ObjectHideFlags: 0
