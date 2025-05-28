@@ -6,24 +6,23 @@ using UnityEngine;
 
 public class LaneManager : MonoBehaviour
 {
-    Vector3[] _gameLanes;
-    Vector3[] _laneSpawnPositions;
+    public Vector3[] _gameLanes;
+    public Vector3[] _laneSpawnPositions;
 
     private int _laneAmount = 3;
 
     private static Vector3 _startPositionModifier = new Vector3(0, 0, 35);
 
-    private static Vector3 _leftLane = new Vector3(-3, 0.5f, 0);
+    private static Vector3 _leftLane = new Vector3(-3, 0, 0);
     private static Vector3 _leftLaneStartPosition = _leftLane + _startPositionModifier;
 
-    private static Vector3 _middleLane = new Vector3(0, 0.5f, 0);
+    private static Vector3 _middleLane = new Vector3(0, 0, 0);
     private static Vector3 _middleLaneStartPosition = _middleLane + _startPositionModifier;
 
-    private static Vector3 _rightLane = new Vector3(3, 0.5f, 0);
+    private static Vector3 _rightLane = new Vector3(3, 0, 0);
     private static Vector3 _rightLaneStartPosition = _rightLane + _startPositionModifier;
 
     private static Vector3 _destroyZone = new Vector3(0, 0, -5);
-
 
     public int GetLaneAmount()
     {
@@ -80,18 +79,17 @@ public class LaneManager : MonoBehaviour
         _laneSpawnPositions[2] = GetRightLaneStartPos();
     }
 
-    public Vector3 GetRandomSpawnLane()
+    public void Start()
     {
         SetupGameLanes();
+    }
+
+    public Vector3 GetRandomSpawnLane()
+    {
         int laneIndex = UnityEngine.Random.Range(0, GetLaneAmount());
         Vector3 randomLanePosition = new Vector3(_laneSpawnPositions[laneIndex].x, _laneSpawnPositions[laneIndex].y, _laneSpawnPositions[laneIndex].z);
 
         return randomLanePosition;
-    }
-
-    int GetPlayerLane()
-    {
-        return 0;
     }
 
     //Returns a float value that can be used as an obstacle's lane position
@@ -121,9 +119,4 @@ public class LaneManager : MonoBehaviour
     }
 
 
-
-    void SetPlayerLane(int laneNumber)
-    {
-
-    }
 }
