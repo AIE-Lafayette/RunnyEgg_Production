@@ -18,7 +18,17 @@ public class ObstacleSpawnManager : MonoBehaviour
     [SerializeField]
     private bool _isGameStarted = true;
 
-    private int GetRandomIndex()
+    public float GetObstacleStartDelay()
+    {
+        return _obstacleStartDelay;
+    }
+
+    public float GetObstacleSpawnInterval()
+    {
+        return _obstacleSpawnInterval;
+    }
+
+    private int GetRandomObstacleIndex()
     {
         int indexOutput = Random.Range(0, _obstaclePrefabs.Length);
         return indexOutput;
@@ -41,6 +51,8 @@ public class ObstacleSpawnManager : MonoBehaviour
             Vector3 baselineVector = _laneManager.GetMiddleLaneStartPos();
             Vector3 leftOffsetVector = Vector3.left * 2;
             Vector3 rightOffsetVector = Vector3.right * 2;
+
+            //Generates an int that determines whether the obstacle is offset to the left or right of the middle lane
             int vectorDeterminer = Random.Range(1, 3);
 
             switch (vectorDeterminer)
@@ -69,7 +81,7 @@ public class ObstacleSpawnManager : MonoBehaviour
     private void SpawnObstacles()
     {
         //Generates an interger that determines which obstacle prefab spawns in this instance of the function
-        int index = GetRandomIndex();
+        int index = GetRandomObstacleIndex();
 
         Instantiate(_obstaclePrefabs[index], SetObstacleLane(index), _obstaclePrefabs[index].transform.rotation);
     }
@@ -78,7 +90,7 @@ public class ObstacleSpawnManager : MonoBehaviour
     {
         if (_isGameStarted == true)
         {
-            InvokeRepeating("SpawnObstacles", _obstacleStartDelay, _obstacleSpawnInterval);
+            InvokeRepeating("SpawnObstacles", GetObstacleStartDelay(), GetObstacleSpawnInterval());
         }
     }
 }
