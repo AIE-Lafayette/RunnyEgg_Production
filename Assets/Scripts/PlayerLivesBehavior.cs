@@ -8,8 +8,7 @@ public class PlayerLivesBehavior : MonoBehaviour
     [SerializeField]
     private int _lives;
 
-    [SerializeField]
-    private float _invincibilityFramesDuration;
+    private float _invincibilityFramesDuration = 3.0f;
 
     private float _invincibilityFramesTimer;
 
@@ -30,7 +29,7 @@ public class PlayerLivesBehavior : MonoBehaviour
             _invincibilityFramesTimer -= Time.deltaTime;
     }
 
-    public void LoseLife()
+    private void LoseLife()
     {
         // Decrement lives, then invoke OnAllLivesLost if lives are less than or equal to 0, or OnLifeLost if not. 
         _lives--;
@@ -54,7 +53,7 @@ public class PlayerLivesBehavior : MonoBehaviour
         if (_invincibilityFramesTimer > 0)
             return;
 
-        if (collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag.Contains("Obstacle"))
             LoseLife();
     }
 }
