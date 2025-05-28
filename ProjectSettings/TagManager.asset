@@ -4,8 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
-  - Floor
+  - OneLaneObstacle
+  - TwoLaneObstacle
+  - ThreeLaneObstacle
   layers:
   - Default
   - TransparentFX
