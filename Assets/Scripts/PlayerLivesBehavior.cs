@@ -13,12 +13,16 @@ public class PlayerLivesBehavior : MonoBehaviour
 
     private float _invincibilityFramesTimer;
 
+    private bool _isDead = false;
+
     public UnityEvent OnLifeLost;
 
     public UnityEvent OnAllLivesLost;
 
 
     public int Lives { get => _lives; }
+
+    public bool IsDead { get => _isDead; }
 
     private void Update()
     {
@@ -34,7 +38,7 @@ public class PlayerLivesBehavior : MonoBehaviour
         if (_lives <= 0)
         {
             OnAllLivesLost.Invoke();
-            Destroy(gameObject);
+            _isDead = true;
         }
         else
         {
