@@ -21,6 +21,7 @@ public class GameStartManager : MonoBehaviour
     private Camera _gameCamera;
 
     [SerializeField]
+    [Tooltip("The position and rotation the camera will move to when the game starts.")]
     private CameraTransform _gameplayCameraTransform;
 
     [SerializeField]
@@ -33,6 +34,7 @@ public class GameStartManager : MonoBehaviour
 
     private void Update()
     {
+        // temporary dev game start button
         if (Input.GetKeyDown(KeyCode.F))
             StartGame();
     }
@@ -66,6 +68,8 @@ public class GameStartManager : MonoBehaviour
         float cameraRotationPerFrameZ = (_gameplayCameraTransform.rotation.z - _gameCamera.transform.rotation.eulerAngles.z) / _cameraMoveTime;
 
         Vector3 cameraRotationPerFrameVector = new Vector3(cameraRotationPerFrameX, cameraRotationPerFrameY, cameraRotationPerFrameZ);
+
+        
 
         // move & rotate the camera
         for (int i = 0; i < _cameraMoveTime; i++)
