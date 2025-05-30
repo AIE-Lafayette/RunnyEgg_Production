@@ -14,9 +14,19 @@ public class CollectibleUpdateManager : MonoBehaviour
         return _collectibleSpeed;
     }
 
+    private void MoveCollectible()
+    {
+        transform.position = transform.position + (Vector3.back * GetCollectibleSpeed()) * Time.deltaTime;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        MoveCollectible();
+
+        if (transform.position.z <= _laneManager.GetDestroyZone())
+        {
+            Destroy(gameObject);
+        }
     }
 }
