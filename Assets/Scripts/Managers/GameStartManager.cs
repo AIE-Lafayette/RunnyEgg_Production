@@ -25,7 +25,7 @@ public class GameStartManager : MonoBehaviour
     private CameraTransform _gameplayCameraTransform;
 
     [SerializeField]
-    [Tooltip("The time it will take to move the camera at the start of the game <i>in frames.</i> This objectively sucks, but I don't know how make it work with Time.deltaTime. ):")]
+    [Tooltip("The time it will take to move the camera at the start of the game <i>in frames.</i> This objectively sucks, but I don't know how to make it work with Time.deltaTime. ):")]
     private uint _cameraMoveTime;
 
     private bool _gameStarted = false;
@@ -69,9 +69,7 @@ public class GameStartManager : MonoBehaviour
 
         Vector3 cameraRotationPerFrameVector = new Vector3(cameraRotationPerFrameX, cameraRotationPerFrameY, cameraRotationPerFrameZ);
 
-        
-
-        // move & rotate the camera
+        // move & rotate the camera to the position
         for (int i = 0; i < _cameraMoveTime; i++)
         {
             Vector3 newCameraPosition = _gameCamera.transform.position;
