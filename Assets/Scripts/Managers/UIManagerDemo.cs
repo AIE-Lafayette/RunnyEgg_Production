@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using TMPro.EditorUtilities;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManagerDemo : MonoBehaviour
 {
@@ -53,6 +54,9 @@ public class UIManagerDemo : MonoBehaviour
 
         if (_scoreText)
             _scoreText.alpha = 0;
+
+        if (_quitButton.TryGetComponent(out Button button))
+            button.onClick.AddListener(QuitGame);
     }
 
     private void Update()
@@ -71,5 +75,10 @@ public class UIManagerDemo : MonoBehaviour
 
         _scoreText.alpha = 1;
         _playerLivesText.alpha = 1;
+    }
+
+    private void QuitGame()
+    {
+        Application.Quit();
     }
 }
