@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3512335932239660725}
   m_Layer: 0
   m_Name: PrototypeBreadLoaf
-  m_TagString: TwoLaneObstacle
+  m_TagString: BreadLoaf
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

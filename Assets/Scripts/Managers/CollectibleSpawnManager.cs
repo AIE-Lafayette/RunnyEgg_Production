@@ -33,9 +33,10 @@ public class CollectibleSpawnManager : MonoBehaviour
         return indexOutput;
     }
 
-    public Vector3 SetCollectibleLane()
+    public Vector3 SetCollectibleLane(int index)
     {
         Vector3 determinedLane = new Vector3();
+
 
         determinedLane = _laneManager.GetRandomSpawnLane();
 
@@ -46,7 +47,7 @@ public class CollectibleSpawnManager : MonoBehaviour
     {
         int index = GetRandomCollectibleIndex();
 
-        Instantiate(_collectiblePrefabs[index], SetCollectibleLane(), _collectiblePrefabs[index].transform.rotation);
+        Instantiate(_collectiblePrefabs[index], SetCollectibleLane(index), _collectiblePrefabs[index].transform.rotation);
     }
 
     // Start is called before the first frame update

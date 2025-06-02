@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 923301601404526874}
   m_Layer: 0
   m_Name: PrototypeEggCarton
-  m_TagString: ThreeLaneObstacle
+  m_TagString: EggCarton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
