@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -18,9 +19,20 @@ public class UIManagerDemo : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _scoreText;
 
+    [SerializeField]
+    private GameObject _titleScreenManager;
+
+    [SerializeField]
+    private GameObject _startButton;
+
+    [SerializeField]
+    private GameObject _quitButton;
+
     private PlayerLivesBehavior _playerLives;
 
     private ScoreManager _scoreManagerScript;
+
+    private TitleScreenManager _titleScreenManagerScript;
 
     private void Start()
     {
@@ -29,6 +41,18 @@ public class UIManagerDemo : MonoBehaviour
 
         if (_scoreManager.TryGetComponent(out ScoreManager score))
             _scoreManagerScript = score;
+
+        if (_titleScreenManager.TryGetComponent(out TitleScreenManager titleScreen))
+        {
+            _titleScreenManagerScript = titleScreen;
+            _titleScreenManagerScript.OnGameStart.AddListener(SwapToGameplayUI);
+        }
+
+        if (_playerLivesText)
+            _playerLivesText.alpha = 0;
+
+        if (_scoreText)
+            _scoreText.alpha = 0;
     }
 
     private void Update()
@@ -38,5 +62,14 @@ public class UIManagerDemo : MonoBehaviour
 
         if (_playerLivesText && _playerLives)
             _playerLivesText.text = _playerLives.Lives.ToString("Lives: 0");
+    }
+
+    private void SwapToGameplayUI()
+    {
+        _startButton.SetActive(false);
+        _quitButton.SetActive(false);
+
+        _scoreText.alpha = 1;
+        _playerLivesText.alpha = 1;
     }
 }

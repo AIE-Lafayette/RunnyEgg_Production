@@ -24,6 +24,8 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         _scoreIncreaseTimer = _scoreIncreaseDelay;
+
+        enabled = false;
     }
 
     private void Update()

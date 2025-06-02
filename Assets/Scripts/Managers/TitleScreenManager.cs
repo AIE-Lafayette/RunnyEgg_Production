@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameStartManager : MonoBehaviour
+public class TitleScreenManager : MonoBehaviour
 {
     [System.Serializable]
     public struct CameraTransform
@@ -28,6 +28,9 @@ public class GameStartManager : MonoBehaviour
     [Tooltip("The time it will take to move the camera at the start of the game <i>in frames.</i> This objectively sucks, but I don't know how to make it work with Time.deltaTime. ):")]
     private uint _cameraMoveTime;
 
+    [SerializeField]
+    ScoreManager _scoreManager;
+
     private bool _gameStarted = false;
 
     public UnityEvent OnGameStart;
@@ -46,6 +49,8 @@ public class GameStartManager : MonoBehaviour
 
         // preddy quickly but not instantly move the camera to the gameplay camera position & rotation
         StartCoroutine("MoveCamera");
+
+        _scoreManager.enabled = true;
 
         OnGameStart.Invoke();
 
