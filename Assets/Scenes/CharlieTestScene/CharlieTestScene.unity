@@ -1789,7 +1789,7 @@ MonoBehaviour:
   _playerLivesText: {fileID: 1742603727}
   _scoreManager: {fileID: 2050587415}
   _scoreText: {fileID: 87280108}
-  _gameStartManager: {fileID: 1914549565}
+  _titleScreenManager: {fileID: 1914549565}
   _startButton: {fileID: 1891576140}
   _quitButton: {fileID: 1336595588}
 --- !u!1 &1891576140
@@ -1936,7 +1936,7 @@ GameObject:
   - component: {fileID: 1914549567}
   - component: {fileID: 1914549566}
   m_Layer: 0
-  m_Name: GameStartManager
+  m_Name: TitleScreenManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
