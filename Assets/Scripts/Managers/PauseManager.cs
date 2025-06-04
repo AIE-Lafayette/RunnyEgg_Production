@@ -24,6 +24,8 @@ public class PauseManager : MonoBehaviour
 
     private PlayerLivesBehavior _playerLivesBehavior;
 
+    private Vector3 _playerVelocity;
+
     public UnityEvent OnPause;
 
     public UnityEvent OnUnPause;
@@ -61,6 +63,8 @@ public class PauseManager : MonoBehaviour
         _scoreManager.enabled = false;
         _playerController.enabled = false;
         _playerLivesBehavior.enabled = false;
+
+        _playerVelocity = _playerRigidbody.velocity;
         _playerRigidbody.isKinematic = true;
 
         _isGamePaused = true;
@@ -73,7 +77,10 @@ public class PauseManager : MonoBehaviour
         _scoreManager.enabled = true;
         _playerController.enabled = true;
         _playerLivesBehavior.enabled = true;
+
         _playerRigidbody.isKinematic = false;
+        _playerRigidbody.AddForce(_playerVelocity, ForceMode.VelocityChange);
+
 
         _isGamePaused = false;
     }
