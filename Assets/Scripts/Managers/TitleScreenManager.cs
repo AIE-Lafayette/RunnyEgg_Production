@@ -18,7 +18,7 @@ public class TitleScreenManager : MonoBehaviour
             this.rotation = rotation;
         }
     }
-    
+
     [SerializeField]
     private Camera _gameCamera;
 
@@ -38,9 +38,11 @@ public class TitleScreenManager : MonoBehaviour
 
     private PlayerController _playerController;
 
-    private bool _gameStarted = false;
+    private bool _isGameStarted = false;
 
     public UnityEvent OnGameStart;
+
+    public bool IsGameStarted { get => _isGameStarted; }
 
     private void Start()
     {
@@ -60,7 +62,8 @@ public class TitleScreenManager : MonoBehaviour
 
     public void StartGame()
     {
-        if (_gameStarted)
+        // dont start the game if it's already started
+        if (_isGameStarted)
             return;
 
         // preddy quickly but not instantly move the camera to the gameplay camera position & rotation
@@ -71,8 +74,7 @@ public class TitleScreenManager : MonoBehaviour
 
         OnGameStart.Invoke();
 
-        // make sure this function never happens again
-        _gameStarted = true;
+        _isGameStarted = true;
     }
 
     private IEnumerator MoveCamera()
@@ -91,7 +93,7 @@ public class TitleScreenManager : MonoBehaviour
 
         Vector3 cameraRotationPerFrameVector = new Vector3(cameraRotationPerFrameX, cameraRotationPerFrameY, cameraRotationPerFrameZ);
 
-        // move & rotate the camera to the position
+        // move & rotate the camera to the given position over the course of the given amount of frames
         for (int i = 0; i < _cameraMoveTime; i++)
         {
             Vector3 newCameraPosition = _gameCamera.transform.position;
