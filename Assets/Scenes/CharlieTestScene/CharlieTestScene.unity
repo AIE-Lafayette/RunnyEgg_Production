@@ -1960,6 +1960,7 @@ MonoBehaviour:
     rotation: {x: 30, y: 0, z: 0}
   _cameraMoveTime: 100
   _scoreManager: {fileID: 2050587416}
+  _player: {fileID: 1307358846}
   OnGameStart:
     m_PersistentCalls:
       m_Calls: []

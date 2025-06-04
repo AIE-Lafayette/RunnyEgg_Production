@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -29,11 +31,25 @@ public class TitleScreenManager : MonoBehaviour
     private uint _cameraMoveTime;
 
     [SerializeField]
-    ScoreManager _scoreManager;
+    private ScoreManager _scoreManager;
+
+    [SerializeField]
+    private GameObject _player;
+
+    private PlayerController _playerController;
 
     private bool _gameStarted = false;
 
     public UnityEvent OnGameStart;
+
+    private void Start()
+    {
+        if (_player.TryGetComponent(out PlayerController controller))
+        {
+            _playerController = controller;
+            _playerController.enabled = false;
+        }
+    }
 
     private void Update()
     {
@@ -51,6 +67,7 @@ public class TitleScreenManager : MonoBehaviour
         StartCoroutine("MoveCamera");
 
         _scoreManager.enabled = true;
+        _playerController.enabled = true;
 
         OnGameStart.Invoke();
 
