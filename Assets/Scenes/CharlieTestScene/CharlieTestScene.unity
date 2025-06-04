@@ -1965,6 +1965,7 @@ MonoBehaviour:
     rotation: {x: 30, y: 0, z: 0}
   _cameraMoveTime: 100
   _scoreManager: {fileID: 2050587416}
+  _pauseManager: {fileID: 0}
   _player: {fileID: 1307358846}
   OnGameStart:
     m_PersistentCalls:
@@ -2254,7 +2255,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080243791}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2d99d2d438b10c8449b23c2512c31571, type: 3}
   m_Name: 

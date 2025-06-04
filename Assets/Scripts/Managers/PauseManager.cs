@@ -60,10 +60,12 @@ public class PauseManager : MonoBehaviour
 
         OnPause.Invoke();
 
+        // disable all that needs to be disabled
         _scoreManager.enabled = false;
         _playerController.enabled = false;
         _playerLivesBehavior.enabled = false;
 
+        // store the player's velocity to be applied when the game is unpaused before making the player's rigidbody kinematic
         _playerVelocity = _playerRigidbody.velocity;
         _playerRigidbody.isKinematic = true;
 
@@ -74,10 +76,12 @@ public class PauseManager : MonoBehaviour
     {
         OnUnPause.Invoke();
 
+        // enable all that needs to be enabled
         _scoreManager.enabled = true;
         _playerController.enabled = true;
         _playerLivesBehavior.enabled = true;
 
+        // apply the velocity we stored to the player after making the player's rigidbody not kinematic
         _playerRigidbody.isKinematic = false;
         _playerRigidbody.AddForce(_playerVelocity, ForceMode.VelocityChange);
 

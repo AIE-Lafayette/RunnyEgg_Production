@@ -34,6 +34,9 @@ public class TitleScreenManager : MonoBehaviour
     private ScoreManager _scoreManager;
 
     [SerializeField]
+    private PauseManager _pauseManager;
+
+    [SerializeField]
     private GameObject _player;
 
     private PlayerController _playerController;
@@ -53,13 +56,6 @@ public class TitleScreenManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        // temporary dev game start button
-        if (Input.GetKeyDown(KeyCode.F))
-            StartGame();
-    }
-
     public void StartGame()
     {
         // dont start the game if it's already started
@@ -71,6 +67,7 @@ public class TitleScreenManager : MonoBehaviour
 
         _scoreManager.enabled = true;
         _playerController.enabled = true;
+        _pauseManager.enabled = true;
 
         OnGameStart.Invoke();
 
