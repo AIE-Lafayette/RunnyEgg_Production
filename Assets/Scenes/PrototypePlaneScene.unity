@@ -316,6 +316,15 @@ MonoBehaviour:
   _collectiblePrefabs:
   - {fileID: 8462575952291034963, guid: afa7eae33e7fed64a92e5a76ddbfc38b, type: 3}
   - {fileID: 6184783524505516634, guid: cac9d15cb71cd6f4898521dab02222d0, type: 3}
+  - {fileID: 1425821606602019867, guid: 2b7da245bbdf31d4287b733897e0e2f2, type: 3}
+  - {fileID: 7571377695594250808, guid: 79d7071ea44053145b28df6b711fa882, type: 3}
+  _obstaclePositions:
+  - {fileID: 2918122972452467107, guid: 83b8294de33348042a4a8098e1d2ecb9, type: 3}
+  - {fileID: 2594302523537415442, guid: 80ab22eab29084643a8d9696144955d4, type: 3}
+  - {fileID: 3257965526163578465, guid: d27edb73eb1481a4dae5d99a5d7cc24d, type: 3}
+  - {fileID: 6021422639089576016, guid: bdbe045be6999374cb921c124980b827, type: 3}
+  - {fileID: 5896869584021702028, guid: 41f0cd2ccfcce3946b488a01f6cdd35a, type: 3}
+  - {fileID: 7727712035931116878, guid: e529fcd9474afc44fba9c6d77f867342, type: 3}
   _collectibleStartDelay: 3
   _collectibleSpawnInterval: 3
   _isGameStarted: 1
@@ -468,7 +477,7 @@ GameObject:
   - component: {fileID: 832136690}
   - component: {fileID: 832136689}
   - component: {fileID: 832136688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Obstacle Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
