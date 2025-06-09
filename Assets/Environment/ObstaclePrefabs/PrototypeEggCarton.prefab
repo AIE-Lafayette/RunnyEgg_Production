@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 923301601404526874}
   m_Layer: 0
   m_Name: PrototypeEggCarton
-  m_TagString: ThreeLaneObstacle
+  m_TagString: EggCarton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _laneManager: {fileID: 923301601404526874}
-  _obstacleSpeed: 5
+  _obstacleSpeed: 6
 --- !u!114 &923301601404526874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,4 +133,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2848531e46b469b4583f4c4ffe806c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerTransform: {fileID: 0}
+  _gameLanes: []
+  _laneSpawnPositions: []

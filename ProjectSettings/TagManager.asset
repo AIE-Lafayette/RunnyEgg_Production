@@ -4,9 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - OneLaneObstacle
-  - TwoLaneObstacle
-  - ThreeLaneObstacle
+  - SmallCollectible
+  - LargeCollectible
+  - BreadLoaf
+  - Burner
+  - EggCarton
+  - FlourSack
+  - OilSpill
+  - RollingPin
+  - ElevatedSmallCollectible
+  - ElevatedLargeCollectible
   layers:
   - Default
   - TransparentFX
