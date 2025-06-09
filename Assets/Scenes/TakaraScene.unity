@@ -288,6 +288,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 957c3004184b7c448a81a96536faf367, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 38c0484616b5c8041ab73b9d3f3e1a2b, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 957c3004184b7c448a81a96536faf367, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5ecde76f0fe0cc6498b72721560d4d54, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 957c3004184b7c448a81a96536faf367, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 38c0484616b5c8041ab73b9d3f3e1a2b, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 957c3004184b7c448a81a96536faf367, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: df22e59b4a99f324a98a1bb26c4c06a7, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 957c3004184b7c448a81a96536faf367, type: 3}
+      propertyPath: m_Materials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 234e8dd303de1d94da7a6959c5c818d0, type: 2}
     - target: {fileID: 919132149155446097, guid: 957c3004184b7c448a81a96536faf367, type: 3}
       propertyPath: m_Name
       value: burner_high
@@ -543,6 +563,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 9ec7430c65aa04b4e8a4b977529eabda, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 342d46c5ecfabcd468c71ba622401026, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 9ec7430c65aa04b4e8a4b977529eabda, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: da1840cd2e0427748ac47ab592ed9f61, type: 2}
     - target: {fileID: 919132149155446097, guid: 9ec7430c65aa04b4e8a4b977529eabda, type: 3}
       propertyPath: m_Name
       value: flour_high
@@ -759,6 +787,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: oilspill_high
       objectReference: {fileID: 0}
+    - target: {fileID: 1641176686255568291, guid: 791bed5b098f6b64c8484fbf91c71b22, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5809c9f3588bfb84c8b42debe9e8dbde, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
