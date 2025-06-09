@@ -345,6 +345,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3275959055558772311, guid: ce41aaeddb96ba543be19389a89ec293, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f3bfa5065347184f908a9e3d829dfc9, type: 2}
     - target: {fileID: 919132149155446097, guid: ce41aaeddb96ba543be19389a89ec293, type: 3}
       propertyPath: m_Name
       value: rollingpin_high
@@ -646,7 +650,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487330290}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
