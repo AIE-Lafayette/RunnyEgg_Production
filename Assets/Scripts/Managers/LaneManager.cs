@@ -59,6 +59,72 @@ public class LaneManager : MonoBehaviour
         return _rightLaneStartPosition;
     }
 
+    public Vector3 GetMiddleOrLeftLaneSpawns()
+    {
+        Vector3 chosenLane = new Vector3();
+
+        int laneDeterminer = UnityEngine.Random.Range(1, 3);
+
+        switch (laneDeterminer)
+        {
+            case 1:
+                chosenLane = GetLeftLaneStartPos();
+                break;
+            case 2:
+                chosenLane = GetMiddleLaneStartPos();
+                break;
+            default:
+                chosenLane = GetMiddleLaneStartPos();
+                break;
+        }
+
+        return chosenLane;
+    }
+
+    public Vector3 GetMiddleOrRightLaneSpawns()
+    {
+        Vector3 chosenLane = new Vector3();
+
+        int laneDeterminer = UnityEngine.Random.Range(1, 3);
+
+        switch (laneDeterminer)
+        {
+            case 1:
+                chosenLane = GetRightLaneStartPos();
+                break;
+            case 2:
+                chosenLane = GetMiddleLaneStartPos();
+                break;
+            default:
+                chosenLane = GetMiddleLaneStartPos();
+                break;
+        }
+
+        return chosenLane;
+    }
+
+    public Vector3 GetLeftOrRightLaneSpawns()
+    {
+        Vector3 chosenLane = new Vector3();
+
+        int laneDeterminer = UnityEngine.Random.Range(1, 3);
+
+        switch (laneDeterminer)
+        {
+            case 1:
+                chosenLane = GetLeftLaneStartPos();
+                break;
+            case 2:
+                chosenLane = GetRightLaneStartPos();
+                break;
+            default:
+                chosenLane = GetRightLaneStartPos();
+                break;
+        }
+
+        return chosenLane;
+    }
+
     public float GetDestroyZone()
     {
         return _destroyZone.z;
