@@ -6,14 +6,14 @@ TagManager:
   tags:
   - SmallCollectible
   - LargeCollectible
-  - BreadLoaf
-  - Burner
-  - EggCarton
-  - FlourSack
-  - OilSpill
-  - RollingPin
   - ElevatedSmallCollectible
   - ElevatedLargeCollectible
+  - BreadLoafObstacle
+  - BurnerObstacle
+  - EggCartonObstacle
+  - FlourSackObstacle
+  - OilSpillObstacle
+  - RollingPinObstacle
   layers:
   - Default
   - TransparentFX
