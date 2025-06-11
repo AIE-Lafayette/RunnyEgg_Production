@@ -285,37 +285,6 @@ Transform:
   - {fileID: 1543824525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &112010117
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 112010118}
-  m_Layer: 0
-  m_Name: "TestObjectWhichIsEasilyRemovableOnPurposeBecauseWe'reFiguringOutHowToFixThisReallyWeirdMergeConflictImSureYoullUndestandOk?\u03A3:3ThankYou<3AndHaveAGoodNightsSleep"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &112010118
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 112010117}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -135.50642, y: -31.375135, z: 318.38605}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &153168563
 GameObject:
   m_ObjectHideFlags: 0
@@ -2344,7 +2313,6 @@ SceneRoots:
   - {fileID: 5948428959351118186}
   - {fileID: 6850830084904925695}
   - {fileID: 99888305592703213}
-  - {fileID: 112010118}
   - {fileID: 106539763}
   - {fileID: 597863034}
   - {fileID: 1164301245}
