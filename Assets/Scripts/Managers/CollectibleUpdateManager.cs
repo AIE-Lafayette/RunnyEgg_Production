@@ -9,6 +9,9 @@ public class CollectibleUpdateManager : MonoBehaviour
     [SerializeField]
     private float _collectibleSpeed = 6.0f;
 
+    [SerializeField]
+    private float _scoreIncreaseAmount = 50.0f;
+
     public float GetCollectibleSpeed()
     {
         return _collectibleSpeed;
@@ -28,5 +31,10 @@ public class CollectibleUpdateManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(gameObject);
     }
 }

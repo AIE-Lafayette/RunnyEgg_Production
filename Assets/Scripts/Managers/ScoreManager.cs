@@ -25,14 +25,12 @@ public class ScoreManager : MonoBehaviour
     {
         _scoreIncreaseTimer = _scoreIncreaseDelay;
 
-        enabled = false;
+        if (_playerLives)
+            _playerLives.OnAllLivesLost.AddListener(Disable);
     }
 
     private void Update()
     {
-        if (_playerLives.IsDead)
-            enabled = false;
-
         if (_scoreIncreaseTimer <= 0)
         {
             AddScore(_scoreIncreaseAmount);
@@ -40,5 +38,10 @@ public class ScoreManager : MonoBehaviour
         }
         else
             _scoreIncreaseTimer -= Time.deltaTime;
+    }
+
+    private void Disable()
+    {
+        enabled = false;
     }
 }
