@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float _jumpForce = 10.0f;
 
-    [SerializeField]
     private float _groundCheckDelay = 0.25f;
 
     Rigidbody _rigidbody;

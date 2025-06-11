@@ -8,10 +8,11 @@ public class PlayerLivesBehavior : MonoBehaviour
     [SerializeField]
     private int _lives;
 
-    [SerializeField]
-    private float _invincibilityFramesDuration;
+    private float _invincibilityFramesDuration = 3.0f;
 
     private float _invincibilityFramesTimer;
+
+    private bool _isDead = false;
 
     public UnityEvent OnLifeLost;
 
@@ -20,13 +21,15 @@ public class PlayerLivesBehavior : MonoBehaviour
 
     public int Lives { get => _lives; }
 
+    public bool IsDead { get => _isDead; }
+
     private void Update()
     {
         if (_invincibilityFramesTimer > 0)
             _invincibilityFramesTimer -= Time.deltaTime;
     }
 
-    public void LoseLife()
+    private void LoseLife()
     {
         // Decrement lives, then invoke OnAllLivesLost if lives are less than or equal to 0, or OnLifeLost if not. 
         _lives--;
@@ -34,7 +37,7 @@ public class PlayerLivesBehavior : MonoBehaviour
         if (_lives <= 0)
         {
             OnAllLivesLost.Invoke();
-            Destroy(gameObject);
+            _isDead = true;
         }
         else
         {
@@ -50,7 +53,7 @@ public class PlayerLivesBehavior : MonoBehaviour
         if (_invincibilityFramesTimer > 0)
             return;
 
-        if (collision.gameObject.tag == "Obstacle")
+        if (collision.gameObject.tag.Contains("Obstacle"))
             LoseLife();
     }
 }

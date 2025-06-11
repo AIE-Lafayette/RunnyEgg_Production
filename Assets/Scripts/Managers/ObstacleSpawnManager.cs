@@ -42,17 +42,17 @@ public class ObstacleSpawnManager : MonoBehaviour
         Vector3 determinedLane = new Vector3();
 
         //If statements to determine three-lane filling obstacles' positions
-        if (_obstaclePrefabs[index].CompareTag("EggCarton"))
+        if (_obstaclePrefabs[index].CompareTag("EggCartonObstacle"))
         {
             determinedLane = _laneManager.GetMiddleLaneStartPos();
         }
-        else if (_obstaclePrefabs[index].CompareTag("RollingPin"))
+        else if (_obstaclePrefabs[index].CompareTag("RollingPinObstacle"))
         {
             determinedLane = _laneManager.GetMiddleLaneStartPos();
         }
 
         //Obstacles with the BreadLoaf tag is an exception to being placed into one of three lanes, and is offset from the middle lane in order to occupy two lanes at once when instantiated
-        else if (_obstaclePrefabs[index].CompareTag("BreadLoaf"))
+        else if (_obstaclePrefabs[index].CompareTag("BreadLoafObstacle"))
         {
             Vector3 baselineVector = _laneManager.GetMiddleLaneStartPos();
             Vector3 leftOffsetVector = Vector3.left * 2;
@@ -78,15 +78,15 @@ public class ObstacleSpawnManager : MonoBehaviour
         }
 
         //If statements one-lane filling obstacles' positions
-        else if (_obstaclePrefabs[index].CompareTag("Burner"))
+        else if (_obstaclePrefabs[index].CompareTag("BurnerObstacle"))
         {
             determinedLane = _laneManager.GetRandomSpawnLane();
         }
-        else if (_obstaclePrefabs[index].CompareTag("FlourSack"))
+        else if (_obstaclePrefabs[index].CompareTag("FlourSackObstacle"))
         {
             determinedLane = _laneManager.GetRandomSpawnLane();
         }
-        else if (_obstaclePrefabs[index].CompareTag("OilSpill"))
+        else if (_obstaclePrefabs[index].CompareTag("OilSpillObstacle"))
         {
             determinedLane = _laneManager.GetRandomSpawnLane();
         }

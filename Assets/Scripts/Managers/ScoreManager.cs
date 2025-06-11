@@ -14,6 +14,9 @@ public class ScoreManager : MonoBehaviour
 
     private float _scoreIncreaseTimer;
 
+    [SerializeField]
+    private PlayerLivesBehavior _playerLives;
+
     public double Score { get => _score; }
 
     public void AddScore(double score) { _score += score; }
@@ -21,10 +24,15 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         _scoreIncreaseTimer = _scoreIncreaseDelay;
+
+        enabled = false;
     }
 
     private void Update()
     {
+        if (_playerLives.IsDead)
+            enabled = false;
+
         if (_scoreIncreaseTimer <= 0)
         {
             AddScore(_scoreIncreaseAmount);

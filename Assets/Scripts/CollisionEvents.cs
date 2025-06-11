@@ -6,6 +6,8 @@ using UnityEngine.Events;
 
 public class CollisionEvents : MonoBehaviour
 {
+    // test
+
     public UnityEvent<Collision> OnCollisionEnterEvent;
     public UnityEvent<Collision> OnCollisionStayEvent;
     public UnityEvent<Collision> OnCollisionExitEvent;

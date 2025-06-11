@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8676357264715069748}
   m_Layer: 0
   m_Name: PrototypeRollingPin
-  m_TagString: RollingPin
+  m_TagString: RollingPinObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

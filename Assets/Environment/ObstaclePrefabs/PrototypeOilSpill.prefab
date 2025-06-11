@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2977618320210985041}
   m_Layer: 0
   m_Name: PrototypeOilSpill
-  m_TagString: OilSpill
+  m_TagString: OilSpillObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
