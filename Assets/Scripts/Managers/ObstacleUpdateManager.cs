@@ -31,4 +31,11 @@ public class ObstacleUpdateManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent(out PlayerLivesBehavior playerLives))
+            playerLives.Hurt();
+
+    }
 }

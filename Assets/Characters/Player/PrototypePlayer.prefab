@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 2383002072567700689}
   - component: {fileID: 230376971676762263}
   - component: {fileID: 2910645310589791732}
+  - component: {fileID: 7285423055110370900}
   m_Layer: 0
   m_Name: PrototypePlayer
   m_TagString: Untagged
@@ -117,7 +118,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5931240211785948156}
-  - {fileID: 1907527765461528933}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5009295407225636852
@@ -135,7 +135,6 @@ MonoBehaviour:
   _moveInput: {fileID: -1133609675643740850, guid: 6bac7c3e74f321644ad1595d945af585, type: 3}
   _jumpInput: {fileID: 637072120847556604, guid: 6bac7c3e74f321644ad1595d945af585, type: 3}
   _jumpForce: 12
-  _groundCheckDelay: 0.25
   LeftInput:
     m_PersistentCalls:
       m_Calls:
@@ -258,6 +257,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: ce01f106-6fc1-4d1d-8db0-01a70395d67a
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d484dd33-e933-44ba-946d-90a2fe3ab3b2
+    m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -290,45 +293,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!1 &5067326975101598621
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1907527765461528933}
-  - component: {fileID: 4259769282946288378}
-  m_Layer: 0
-  m_Name: Collision
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1907527765461528933
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5067326975101598621}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8405962183378048205}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &4259769282946288378
+--- !u!136 &7285423055110370900
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5067326975101598621}
+  m_GameObject: {fileID: 3123305143868251640}
   m_Material: {fileID: 13400000, guid: 446dfa25bb7f3cf41b3584faa3151681, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
