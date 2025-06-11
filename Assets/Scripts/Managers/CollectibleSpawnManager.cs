@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class CollectibleSpawnManager : MonoBehaviour
 {
+    // score manager reference to give to collectibles
+    [SerializeField]
+    private ScoreManager _scoreManager;
+
     public LaneManager _laneManager;
 
     [SerializeField]
@@ -76,7 +80,13 @@ public class CollectibleSpawnManager : MonoBehaviour
     {
         int index = GetRandomCollectibleIndex();
 
-        Instantiate(_collectiblePrefabs[index], SetCollectibleLane(index), _collectiblePrefabs[index].transform.rotation);
+        GameObject collectible = Instantiate(_collectiblePrefabs[index], SetCollectibleLane(index), _collectiblePrefabs[index].transform.rotation);
+
+        if (collectible.TryGetComponent(out CollectibleUpdateManager c))
+        {
+            c.ScoreManagerr = _scoreManager;
+            c.LaneManager = _laneManager;
+        }
     }
 
     // Start is called before the first frame update

@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CollectibleUpdateManager : MonoBehaviour
 {
-    public LaneManager _laneManager;
+    public ScoreManager ScoreManagerr;
+
+    public LaneManager LaneManager;
 
     [SerializeField]
     private float _collectibleSpeed = 6.0f;
@@ -27,7 +29,7 @@ public class CollectibleUpdateManager : MonoBehaviour
     {
         MoveCollectible();
 
-        if (transform.position.z <= _laneManager.GetDestroyZone())
+        if (transform.position.z <= LaneManager.GetDestroyZone())
         {
             Destroy(gameObject);
         }
@@ -35,6 +37,7 @@ public class CollectibleUpdateManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        ScoreManagerr.AddScore(_scoreIncreaseAmount);
         Destroy(gameObject);
     }
 }
