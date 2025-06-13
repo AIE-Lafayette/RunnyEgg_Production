@@ -506,11 +506,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreManager: {fileID: 1929027487}
-  _scoreText: {fileID: 682841907}
   _titleScreenManager: {fileID: 153168563}
   _player: {fileID: 314358790}
+  _scoreText: {fileID: 682841907}
   _playerLivesText: {fileID: 2114333879}
-  _finalScoreText: {fileID: 891687153}
+  _finalScoreText: {fileID: 891687155}
   _startButton: {fileID: 1183698266}
   _quitButton: {fileID: 1717079823}
   _restartButton: {fileID: 206556763}
@@ -1277,7 +1277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &891687154
 RectTransform:
   m_ObjectHideFlags: 0
