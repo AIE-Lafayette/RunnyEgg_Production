@@ -11,8 +11,6 @@ public class UIManagerDemo : MonoBehaviour
     [SerializeField]
     private GameObject _scoreManager;
 
-    [SerializeField]
-    private TextMeshProUGUI _scoreText;
 
     [SerializeField]
     private GameObject _titleScreenManager;
@@ -25,10 +23,13 @@ public class UIManagerDemo : MonoBehaviour
 
 
     [SerializeField]
+    private TextMeshProUGUI _scoreText;
+
+    [SerializeField]
     private TextMeshProUGUI _playerLivesText;
 
     [SerializeField]
-    private GameObject _finalScoreText;
+    private TextMeshProUGUI _finalScoreText;
 
 
     [Space(10)]
@@ -49,8 +50,6 @@ public class UIManagerDemo : MonoBehaviour
 
     private TitleScreenManager _titleScreenManagerScript;
 
-    private TextMeshProUGUI _finalScoreTextMesh;
-
     public GameObject RestartButton { get => _restartButton; }
 
     private void Start()
@@ -70,14 +69,14 @@ public class UIManagerDemo : MonoBehaviour
             _titleScreenManagerScript.OnGameStart.AddListener(SwapToGameplayUI);
         }
 
-        if (_finalScoreText.TryGetComponent(out TextMeshProUGUI textMesh))
-            _finalScoreTextMesh = textMesh;
-
         if (_playerLivesText)
             _playerLivesText.alpha = 0;
 
         if (_scoreText)
             _scoreText.alpha = 0;
+
+        if (_finalScoreText)
+            _finalScoreText.alpha = 0;
 
         if (_quitButton.TryGetComponent(out Button button))
             button.onClick.AddListener(QuitGame);
@@ -105,9 +104,10 @@ public class UIManagerDemo : MonoBehaviour
     {
         _restartButton.SetActive(true);
         _quitButton.SetActive(true);
-        _finalScoreText.SetActive(true);
 
-        _finalScoreTextMesh.text = _scoreManagerScript.Score.ToString("Your Final Score is: \n 00000000");
+        _finalScoreText.alpha = 1;
+        _finalScoreText.text = _scoreManagerScript.Score.ToString("Your Final Score is: \n 00000000");
+
         _scoreText.alpha = 0;
         _playerLivesText.alpha = 0;
     }
