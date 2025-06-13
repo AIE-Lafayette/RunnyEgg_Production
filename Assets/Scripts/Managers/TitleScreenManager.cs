@@ -86,8 +86,7 @@ public class TitleScreenManager : MonoBehaviour
 
     private IEnumerator MoveCamera()
     {
-        // move & rotate the camera at the given speed
-
+        // move & rotate the camera at the given speeds
         while (_gameCamera.transform.position != _gameplayCameraTransform.position || _gameCamera.transform.rotation.eulerAngles != _gameplayCameraTransform.rotation)
         {
             Vector3 newCameraPosition = _gameCamera.transform.position;

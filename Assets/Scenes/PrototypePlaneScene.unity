@@ -319,7 +319,7 @@ MonoBehaviour:
     position: {x: 0, y: 5, z: -4}
     rotation: {x: 30, y: 0, z: 0}
   _cameraMoveSpeed: 10
-  _cameraRotationSpeed: 50
+  _cameraRotationSpeed: 100
   _scoreManager: {fileID: 1929027488}
   _pauseManager: {fileID: 559620583}
   _obstacleManager: {fileID: 104974005}
