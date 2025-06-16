@@ -56,7 +56,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LaneManagerDemo, Assembly-CSharp
+        m_TargetAssemblyTypeName: LaneManager, Assembly-CSharp
         m_MethodName: MovePlayerLeft
         m_Mode: 1
         m_Arguments:
@@ -71,7 +71,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LaneManagerDemo, Assembly-CSharp
+        m_TargetAssemblyTypeName: LaneManager, Assembly-CSharp
         m_MethodName: MovePlayerRight
         m_Mode: 1
         m_Arguments:
@@ -208,8 +208,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
+  m_Constraints: 122
+  m_CollisionDetection: 1
 --- !u!136 &7285423055110370900
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -229,10 +229,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.3
+  m_Height: 1.7
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -0.19, z: 0}
 --- !u!1001 &5503904480854374932
 PrefabInstance:
   m_ObjectHideFlags: 0

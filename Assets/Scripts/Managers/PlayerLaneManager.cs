@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerLaneManager : MonoBehaviour
 {
-    public LaneManager _laneManager;
+    public LaneManager LanesManager;
 
     [SerializeField]
     private Transform _playerTransform;
+
+    [SerializeField]
+    private float _playerMovementSpeed;
 
     private int _playerLaneIndex = 1;
 
@@ -17,10 +20,21 @@ public class PlayerLaneManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        _laneManager.SetupGameLanes();
-        _playerTransform.position = _laneManager._gameLanes[GetPlayerLaneIndex()];
+        LanesManager.SetupGameLanes();
+        _playerTransform.position = LanesManager.GameLanes[GetPlayerLaneIndex()];
+    }
+
+    private void Update()
+    {
+        // move the player towards their current lane should that not be where they are
+        if (_playerTransform.position.x != LanesManager.GameLanes[_playerLaneIndex].x)
+        {
+            Vector3 newPosition = _playerTransform.position;
+            newPosition.x = Mathf.Lerp(_playerTransform.position.x, LanesManager.GameLanes[_playerLaneIndex].x, _playerMovementSpeed * Time.deltaTime);
+            _playerTransform.position = newPosition;
+        }
     }
 
     public void MovePlayerLeft()
@@ -29,19 +43,13 @@ public class PlayerLaneManager : MonoBehaviour
             return;
 
         _playerLaneIndex--;
-        Vector3 newPosition = _playerTransform.position;
-        newPosition.x = _laneManager._gameLanes[_playerLaneIndex].x;
-        _playerTransform.position = newPosition;
     }
 
     public void MovePlayerRight()
     {
-        if (_playerLaneIndex >= _laneManager._gameLanes.Length - 1)
+        if (_playerLaneIndex >= LanesManager.GameLanes.Length - 1)
             return;
 
         _playerLaneIndex++;
-        Vector3 newPosition = _playerTransform.position;
-        newPosition.x = _laneManager._gameLanes[_playerLaneIndex].x;
-        _playerTransform.position = newPosition;
     }
 }
