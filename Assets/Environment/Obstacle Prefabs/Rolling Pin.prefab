@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 5218117437201622472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23315284, y: 0.49999994, z: -2.4645195}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -42,15 +42,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.189216
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.49483716
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8894687
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58,15 +58,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -83,6 +83,22 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_Name
       value: rollingpin_low
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426879535756044255, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426879535756044255, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426879535756044255, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7426879535756044255, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8707154339067598063, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_Materials.Array.data[0]
