@@ -39,6 +39,9 @@ public class UIManagerDemo : MonoBehaviour
     private GameObject _startButton;
 
     [SerializeField]
+    private GameObject _creditsButton;
+
+    [SerializeField]
     private GameObject _quitButton;
 
     [SerializeField]
@@ -94,6 +97,7 @@ public class UIManagerDemo : MonoBehaviour
     private void SwapToGameplayUI()
     {
         _startButton.SetActive(false);
+        _creditsButton.SetActive(false);
         _quitButton.SetActive(false);
 
         _scoreText.alpha = 1;
