@@ -49,21 +49,21 @@ public class CollectibleSpawnManager : MonoBehaviour
         {
             for (int i = 0; i < _obstaclePositions.Length; i++)
             {
-                //Checks if an obstacle is in the right-side lane and is moving adjacent to the collectible prefab.
                 //These checks find out if the x position is greater than or less than 0 due to the bread loaf obstacle being offset from any static lanes
-                if (_obstaclePositions[i].position.x > 0 && _obstaclePositions[i].position.z == _collectiblePrefabs[index].transform.position.z)
+                //Checks if an obstacle is in the right-side lane and is moving adjacent to the collectible prefab.
+                if (_obstaclePositions[i].position.x == _laneManager.GetRightLanePos() && _obstaclePositions[i].position.z == _collectiblePrefabs[index].transform.position.z)
                 {
                     //Then ensures that the collectible's spawn lane is set to be in lanes other than the right-side lane
                     determinedLane = _laneManager.GetMiddleOrLeftLaneSpawns();
                 }
                 //Checks if an obstacle is in the left-side lane and is moving adjacent to the collectible prefab.
-                else if (_obstaclePositions[i].position.x < 0 && _obstaclePositions[i].position.z == _collectiblePrefabs[index].transform.position.z)
+                else if (_obstaclePositions[i].position.x == _laneManager.GetLeftLanePos() && _obstaclePositions[i].position.z == _collectiblePrefabs[index].transform.position.z)
                 {
                     //Then ensures that the collectible's spawn lane is set to be in lanes other than the left-side lane
                     determinedLane = _laneManager.GetMiddleOrRightLaneSpawns();
                 }
                 //Checks if an obstacle is in the middle lane and is moving adjacent to the collectible prefab.
-                else if (_obstaclePositions[i].position.x == 0 && _obstaclePositions[i].position.z == _collectiblePrefabs[index].transform.position.z)
+                else if (_obstaclePositions[i].position.x == _laneManager.GetMiddleLanePos() && _obstaclePositions[i].position.z == _collectiblePrefabs[index].transform.position.z)
                 {
                     //Then ensures that the collectible's spawn lane is set to be in lanes other than the middle lane
                     determinedLane = _laneManager.GetLeftOrRightLaneSpawns();

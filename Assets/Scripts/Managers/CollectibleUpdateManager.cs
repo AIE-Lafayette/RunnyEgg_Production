@@ -37,7 +37,7 @@ public class CollectibleUpdateManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ScoreManagerr.AddScore(_scoreIncreaseAmount);
+         ScoreManagerr.AddScore(_scoreIncreaseAmount);
         Destroy(gameObject);
     }
 }

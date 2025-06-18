@@ -29,6 +29,11 @@ public class LaneManager : MonoBehaviour
         return _laneAmount;
     }
 
+    public float GetLeftLanePos()
+    {
+        return _leftLane.x;
+    }
+
     public Vector3 GetLeftLane()
     {
         return _leftLane;
@@ -39,6 +44,11 @@ public class LaneManager : MonoBehaviour
         return _leftLaneStartPosition;
     }
 
+    public float GetMiddleLanePos()
+    {
+        return _middleLane.x;
+    }
+
     public Vector3 GetMiddleLane()
     {
         return _middleLane;
@@ -47,6 +57,11 @@ public class LaneManager : MonoBehaviour
     public Vector3 GetMiddleLaneStartPos()
     {
         return _middleLaneStartPosition;
+    }
+
+    public float GetRightLanePos()
+    {
+        return _rightLane.x;
     }
 
     public Vector3 GetRightLane()
