@@ -9,9 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6506908904494416453}
+  - component: {fileID: 6211835686534717142}
+  - component: {fileID: 5419138581360074010}
+  - component: {fileID: 193088650655193655}
   m_Layer: 0
   m_Name: Oil Spill
-  m_TagString: Untagged
+  m_TagString: OilSpillObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,13 +28,62 @@ Transform:
   m_GameObject: {fileID: 6750944811438506478}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.23315284, y: 0.49999994, z: -2.4645195}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3829794587073797221}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &6211835686534717142
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750944811438506478}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.8
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5419138581360074010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750944811438506478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 277845b5dcc06514b9f1f5f681d7b4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _laneManager: {fileID: 193088650655193655}
+  _obstacleSpeed: 6
+--- !u!114 &193088650655193655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750944811438506478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2848531e46b469b4583f4c4ffe806c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameLanes: []
+  _laneSpawnPositions: []
 --- !u!1001 &3651452413610703758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42,15 +94,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 791bed5b098f6b64c8484fbf91c71b22, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.385196
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 791bed5b098f6b64c8484fbf91c71b22, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.49999988
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 791bed5b098f6b64c8484fbf91c71b22, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.891152
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 791bed5b098f6b64c8484fbf91c71b22, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58,15 +110,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 791bed5b098f6b64c8484fbf91c71b22, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 791bed5b098f6b64c8484fbf91c71b22, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 791bed5b098f6b64c8484fbf91c71b22, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 791bed5b098f6b64c8484fbf91c71b22, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
