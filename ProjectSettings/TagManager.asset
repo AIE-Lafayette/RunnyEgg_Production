@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SmallCollectible
+  - LargeCollectible
+  - ElevatedSmallCollectible
+  - ElevatedLargeCollectible
+  - BreadLoafObstacle
+  - BurnerObstacle
+  - EggCartonObstacle
+  - FlourSackObstacle
+  - OilSpillObstacle
+  - RollingPinObstacle
   layers:
   - Default
   - TransparentFX
@@ -11,7 +21,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Floor
   - 
   - 
   - 
