@@ -9,19 +9,31 @@ using UnityEngine.UI;
 public class UIManagerDemo : MonoBehaviour
 {
     [SerializeField]
+    private GameObject _scoreManager;
+
+
+    [SerializeField]
+    private GameObject _titleScreenManager;
+
+    [SerializeField]
     private GameObject _player;
 
-    [SerializeField]
-    private TextMeshProUGUI _playerLivesText;
 
-    [SerializeField]
-    private GameObject _scoreManager;
+    [Space(10)]
+
 
     [SerializeField]
     private TextMeshProUGUI _scoreText;
 
     [SerializeField]
-    private GameObject _titleScreenManager;
+    private TextMeshProUGUI _playerLivesText;
+
+    [SerializeField]
+    private TextMeshProUGUI _finalScoreText;
+
+
+    [Space(10)]
+
 
     [SerializeField]
     private GameObject _startButton;
@@ -29,16 +41,24 @@ public class UIManagerDemo : MonoBehaviour
     [SerializeField]
     private GameObject _quitButton;
 
+    [SerializeField]
+    private GameObject _restartButton;
+
     private PlayerLivesBehavior _playerLives;
 
     private ScoreManager _scoreManagerScript;
 
     private TitleScreenManager _titleScreenManagerScript;
 
+    public GameObject RestartButton { get => _restartButton; }
+
     private void Start()
     {
         if (_player.TryGetComponent(out PlayerLivesBehavior lives))
+        {
             _playerLives = lives;
+            lives.OnAllLivesLost.AddListener(SwapToGameOverUI);
+        }
 
         if (_scoreManager.TryGetComponent(out ScoreManager score))
             _scoreManagerScript = score;
@@ -54,6 +74,9 @@ public class UIManagerDemo : MonoBehaviour
 
         if (_scoreText)
             _scoreText.alpha = 0;
+
+        if (_finalScoreText)
+            _finalScoreText.alpha = 0;
 
         if (_quitButton.TryGetComponent(out Button button))
             button.onClick.AddListener(QuitGame);
@@ -75,6 +98,18 @@ public class UIManagerDemo : MonoBehaviour
 
         _scoreText.alpha = 1;
         _playerLivesText.alpha = 1;
+    }
+
+    private void SwapToGameOverUI()
+    {
+        _restartButton.SetActive(true);
+        _quitButton.SetActive(true);
+
+        _finalScoreText.alpha = 1;
+        _finalScoreText.text = _scoreManagerScript.Score.ToString("Your Final Score is: \n 00000000");
+
+        _scoreText.alpha = 0;
+        _playerLivesText.alpha = 0;
     }
 
     private void QuitGame()

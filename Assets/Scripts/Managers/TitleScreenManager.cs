@@ -27,14 +27,22 @@ public class TitleScreenManager : MonoBehaviour
     private CameraTransform _gameplayCameraTransform;
 
     [SerializeField]
-    [Tooltip("The time it will take to move the camera at the start of the game <i>in frames.</i> This objectively sucks, but I don't know how to make it work with Time.deltaTime. ):")]
-    private uint _cameraMoveTime;
+    private float _cameraMoveSpeed = 10.0f;
+
+    [SerializeField]
+    private float _cameraRotationSpeed = 30.0f;
 
     [SerializeField]
     private ScoreManager _scoreManager;
 
     [SerializeField]
     private PauseManager _pauseManager;
+
+    [SerializeField]
+    private ObstacleSpawnManager _obstacleManager;
+
+    [SerializeField]
+    private CollectibleSpawnManager _collectibleManager;
 
     [SerializeField]
     private GameObject _player;
@@ -68,6 +76,8 @@ public class TitleScreenManager : MonoBehaviour
         _scoreManager.enabled = true;
         _playerController.enabled = true;
         _pauseManager.enabled = true;
+        _obstacleManager.enabled = true;
+        _collectibleManager.enabled = true;
 
         OnGameStart.Invoke();
 
@@ -76,37 +86,25 @@ public class TitleScreenManager : MonoBehaviour
 
     private IEnumerator MoveCamera()
     {
-        // do some quick math to figure out how much the camera needs to move & rotate per frame
-        float cameraMovementPerFrameX = (_gameplayCameraTransform.position.x - _gameCamera.transform.position.x) / _cameraMoveTime;
-        float cameraMovementPerFrameY = (_gameplayCameraTransform.position.y - _gameCamera.transform.position.y) / _cameraMoveTime;
-        float cameraMovementPerFrameZ = (_gameplayCameraTransform.position.z - _gameCamera.transform.position.z) / _cameraMoveTime;
-
-        Vector3 cameraMovementPerFrameVector = new Vector3(cameraMovementPerFrameX, cameraMovementPerFrameY, cameraMovementPerFrameZ);
-
-        
-        float cameraRotationPerFrameX = (_gameplayCameraTransform.rotation.x - _gameCamera.transform.rotation.eulerAngles.x) / _cameraMoveTime;
-        float cameraRotationPerFrameY = (_gameplayCameraTransform.rotation.y - _gameCamera.transform.rotation.eulerAngles.y) / _cameraMoveTime;
-        float cameraRotationPerFrameZ = (_gameplayCameraTransform.rotation.z - _gameCamera.transform.rotation.eulerAngles.z) / _cameraMoveTime;
-
-        Vector3 cameraRotationPerFrameVector = new Vector3(cameraRotationPerFrameX, cameraRotationPerFrameY, cameraRotationPerFrameZ);
-
-        // move & rotate the camera to the given position over the course of the given amount of frames
-        for (int i = 0; i < _cameraMoveTime; i++)
+        // move & rotate the camera at the given speeds
+        while (_gameCamera.transform.position != _gameplayCameraTransform.position || _gameCamera.transform.rotation.eulerAngles != _gameplayCameraTransform.rotation)
         {
             Vector3 newCameraPosition = _gameCamera.transform.position;
             Vector3 newCameraRotation = _gameCamera.transform.rotation.eulerAngles;
 
-            newCameraPosition += cameraMovementPerFrameVector;
-            newCameraRotation += cameraRotationPerFrameVector;
+            newCameraPosition.x = Mathf.MoveTowards(newCameraPosition.x, _gameplayCameraTransform.position.x, _cameraMoveSpeed * Time.deltaTime);
+            newCameraPosition.y = Mathf.MoveTowards(newCameraPosition.y, _gameplayCameraTransform.position.y, _cameraMoveSpeed * Time.deltaTime);
+            newCameraPosition.z = Mathf.MoveTowards(newCameraPosition.z, _gameplayCameraTransform.position.z, _cameraMoveSpeed * Time.deltaTime);
+
+            newCameraRotation.x = Mathf.MoveTowardsAngle(newCameraRotation.x, _gameplayCameraTransform.rotation.x, _cameraRotationSpeed * Time.deltaTime);
+            newCameraRotation.y = Mathf.MoveTowardsAngle(newCameraRotation.y, _gameplayCameraTransform.rotation.y, _cameraRotationSpeed * Time.deltaTime);
+            newCameraRotation.z = Mathf.MoveTowardsAngle(newCameraRotation.z, _gameplayCameraTransform.rotation.z, _cameraRotationSpeed * Time.deltaTime);
 
             _gameCamera.transform.position = newCameraPosition;
             _gameCamera.transform.rotation = Quaternion.Euler(newCameraRotation);
 
             yield return null;
         }
-
-        _gameCamera.transform.position = _gameplayCameraTransform.position;
-        _gameCamera.transform.rotation = Quaternion.Euler(_gameplayCameraTransform.rotation);
 
         yield break;
     }
