@@ -30,9 +30,13 @@ public class PlayerController : MonoBehaviour
 
     private float _groundCheckTimer;
 
-    public UnityEvent LeftInput;
+    public UnityEvent OnLeftInput;
 
-    public UnityEvent RightInput;
+    public UnityEvent OnRightInput;
+
+    public UnityEvent OnJumpInput;
+
+    public UnityEvent OnLanding;
 
     private void Awake()
     {
@@ -58,11 +62,11 @@ public class PlayerController : MonoBehaviour
         // if the player inputted left or right, call the relevant UnityEvent
         if (_moveInputtedThisFrame && _moveDirection.x < 0)
         {
-            LeftInput.Invoke();
+            OnLeftInput.Invoke();
         }
         else if (_moveInputtedThisFrame && _moveDirection.x > 0)
         {
-            RightInput.Invoke();
+            OnRightInput.Invoke();
         }
     }
 
@@ -75,6 +79,7 @@ public class PlayerController : MonoBehaviour
         if (_groundCheckTimer <= 0.0f && !_isGrounded && rayResult)
         {
             _isGrounded = true;
+            OnLanding.Invoke();
         }
         // otherwise, if the player is grounded and jump has been inputted, jump and set isGrounded to false
         else if (_isGrounded && _jumpInputted)
@@ -82,6 +87,7 @@ public class PlayerController : MonoBehaviour
             _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.VelocityChange);
             _isGrounded = false;
             _groundCheckTimer = _groundCheckDelay;
+            OnJumpInput.Invoke();
         }
     }
 }
