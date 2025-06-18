@@ -866,8 +866,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Production_2025_Demo_Temp
-  metroPackageVersion: 
+  metroPackageName: Production2025DemoTemp
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -875,7 +875,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Production_2025_Demo_Temp
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Production_2025_Demo_Temp
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
