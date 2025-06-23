@@ -745,7 +745,7 @@ MonoBehaviour:
   - {fileID: 6506908904494416453, guid: c34d1bf3ee0e8f34186bf66cbb469a8e, type: 3}
   - {fileID: 8059121012939591943, guid: 50c705cbf5a5eec419d1519ed2e01fbe, type: 3}
   _collectibleStartDelay: 3
-  _collectibleSpawnInterval: 1.5
+  _collectibleSpawnInterval: 0.5
   _isGameStarted: 1
 --- !u!1 &559620581
 GameObject:
