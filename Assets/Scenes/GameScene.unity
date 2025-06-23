@@ -247,7 +247,7 @@ MonoBehaviour:
   _obstaclePrefabs:
   - {fileID: 8956102009733659996, guid: fc19a7c71a25f824b81d20f5a110da7b, type: 3}
   - {fileID: 5218117437201622472, guid: 50c705cbf5a5eec419d1519ed2e01fbe, type: 3}
-  - {fileID: 1084552327327978196, guid: e095d9d70008f7d48a00f426013d2d45, type: 3}
+  - {fileID: 4212811601538338146, guid: 701b48710ec70c2469b3de5bfd7c9678, type: 3}
   - {fileID: 6750944811438506478, guid: c34d1bf3ee0e8f34186bf66cbb469a8e, type: 3}
   - {fileID: 5612508447751253707, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
   - {fileID: 7843812542341137483, guid: 707b18184e9b8dc4c8f8de941b7af82c, type: 3}
