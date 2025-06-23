@@ -42,6 +42,7 @@ public class PlayerLivesBehavior : MonoBehaviour
         {
             OnAllLivesLost.Invoke();
             _isDead = true;
+            _invincibilityFramesTimer = 99;
         }
         else
         {
