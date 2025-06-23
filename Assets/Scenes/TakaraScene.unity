@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8587737841248657308, guid: 6fbee281cf6ecaa4294f89a4a8acd16e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.14
+      value: 2.32
       objectReference: {fileID: 0}
     - target: {fileID: 8587737841248657308, guid: 6fbee281cf6ecaa4294f89a4a8acd16e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -448,7 +448,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8587737841248657308, guid: 6fbee281cf6ecaa4294f89a4a8acd16e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.11
+      value: 5.09
       objectReference: {fileID: 0}
     - target: {fileID: 8587737841248657308, guid: 6fbee281cf6ecaa4294f89a4a8acd16e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -941,15 +941,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2826867009413405953, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2826867009413405953, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2826867009413405953, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2826867009413405953, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.97
+      value: 15.49
       objectReference: {fileID: 0}
     - target: {fileID: 2826867009413405953, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -957,7 +961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2826867009413405953, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.4
+      value: 2.31
       objectReference: {fileID: 0}
     - target: {fileID: 2826867009413405953, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -989,7 +993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5612508447751253707, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
       propertyPath: m_Name
-      value: Flour Bag
+      value: Flour Bag (org)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1053,6 +1057,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e095d9d70008f7d48a00f426013d2d45, type: 3}
+--- !u!1001 &7301694620140995500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.2935568
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5335162
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.1069016
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940187844326490199, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8629585107900117160, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+      propertyPath: m_Name
+      value: FlourBag
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
 --- !u!1001 &8692198576083515174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1119,12 +1180,13 @@ SceneRoots:
   - {fileID: 1160234427}
   - {fileID: 1487330294}
   - {fileID: 1282537704212273479}
-  - {fileID: 1142553884486755683}
   - {fileID: 8692198576083515174}
   - {fileID: 3524710310458845192}
   - {fileID: 4107021702991311158}
+  - {fileID: 1142553884486755683}
   - {fileID: 4479297364799317663}
   - {fileID: 1213841459}
   - {fileID: 445918276852304435}
   - {fileID: 408052188230335842}
   - {fileID: 2284259560238891953}
+  - {fileID: 7301694620140995500}
