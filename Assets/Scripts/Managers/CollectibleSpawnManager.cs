@@ -81,11 +81,12 @@ public class CollectibleSpawnManager : MonoBehaviour
         int index = GetRandomCollectibleIndex();
 
         GameObject collectible = Instantiate(_collectiblePrefabs[index], SetCollectibleLane(index), _collectiblePrefabs[index].transform.rotation);
-
         if (collectible.TryGetComponent(out CollectibleUpdateManager c))
         {
             c.ScoreManagerr = _scoreManager;
             c.LaneManager = _laneManager;
+
+
         }
     }
 

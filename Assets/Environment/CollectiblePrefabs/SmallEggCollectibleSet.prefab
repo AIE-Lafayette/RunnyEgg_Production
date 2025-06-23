@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3765209743550099706}
+  - component: {fileID: 6947962156395604745}
   m_Layer: 0
   m_Name: SmallEggCollectibleSet
   m_TagString: SmallCollectible
@@ -36,6 +37,23 @@ Transform:
   - {fileID: 3548834626965262513}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6947962156395604745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 26378184046795754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b93f0ad3049dc344b241f844d8cdc4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreManagerr: {fileID: 0}
+  LaneManager: {fileID: 0}
+  _isPrefab: 1
+  _collectibleSpeed: 6
+  _scoreIncreaseAmount: 50
 --- !u!1001 &666063535285924085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89,37 +107,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 88886118848676157}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 255027151964360578, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 88886118848676157}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
---- !u!1 &771343236884381559 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 255027151964360578, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
-  m_PrefabInstance: {fileID: 666063535285924085}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &88886118848676157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 771343236884381559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60b8406e9b00d4ab4dc5adc772820a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreIncreaseAmount: 50
-  _scoreIncreaseDelay: 0
-  _playerLives: {fileID: 0}
 --- !u!4 &3548834626965262513 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4035694808194359364, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
@@ -178,42 +177,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 6447374274534288614}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 255027151964360578, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6447374274534288614}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
 --- !u!4 &1907874052994574204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4035694808194359364, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
   m_PrefabInstance: {fileID: 2484731747380299576}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2445880709896161466 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 255027151964360578, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
-  m_PrefabInstance: {fileID: 2484731747380299576}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6447374274534288614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2445880709896161466}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60b8406e9b00d4ab4dc5adc772820a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreIncreaseAmount: 50
-  _scoreIncreaseDelay: 0
-  _playerLives: {fileID: 0}
 --- !u!1001 &2827969618592776383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -223,9 +203,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 3765209743550099706}
     m_Modifications:
     - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 2337455879963069414}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     - target: {fileID: 2989136941410985543, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -297,31 +281,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5852376179782546529, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2337455879963069414}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
---- !u!1 &8505371437521220830 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5852376179782546529, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
-  m_PrefabInstance: {fileID: 2827969618592776383}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2337455879963069414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8505371437521220830}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60b8406e9b00d4ab4dc5adc772820a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreIncreaseAmount: 50
-  _scoreIncreaseDelay: 0
-  _playerLives: {fileID: 0}
 --- !u!4 &8587849849960834894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5769353645181069297, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
@@ -336,9 +297,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 3765209743550099706}
     m_Modifications:
     - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 6298668139595152317}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     - target: {fileID: 5769353645181069297, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -386,31 +351,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5852376179782546529, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6298668139595152317}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
---- !u!1 &2018878882082144197 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5852376179782546529, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
-  m_PrefabInstance: {fileID: 5562981852143045540}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6298668139595152317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018878882082144197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60b8406e9b00d4ab4dc5adc772820a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreIncreaseAmount: 50
-  _scoreIncreaseDelay: 0
-  _playerLives: {fileID: 0}
 --- !u!4 &2099647298294328405 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5769353645181069297, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
@@ -469,39 +411,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 2292484421653559791}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 255027151964360578, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2292484421653559791}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
 --- !u!4 &4721804825954021368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4035694808194359364, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
   m_PrefabInstance: {fileID: 8756848648100695996}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8794574205490069566 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 255027151964360578, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
-  m_PrefabInstance: {fileID: 8756848648100695996}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2292484421653559791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8794574205490069566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60b8406e9b00d4ab4dc5adc772820a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreIncreaseAmount: 50
-  _scoreIncreaseDelay: 0
-  _playerLives: {fileID: 0}
