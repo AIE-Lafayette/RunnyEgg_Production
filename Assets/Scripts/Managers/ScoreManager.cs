@@ -19,12 +19,14 @@ public class ScoreManager : MonoBehaviour
 
     public double Score { get => _score; }
 
-    public void AddScore(double score) { _score += score; }
+    public void AddScore(double score) 
+    {
+        _score += score;
+    }
 
     private void Start()
     {
         _scoreIncreaseTimer = _scoreIncreaseDelay;
-
         if (_playerLives)
             _playerLives.OnAllLivesLost.AddListener(Disable);
     }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6108603251070845033}
-  - component: {fileID: 6373515850777291861}
+  - component: {fileID: 4032547394999758500}
   m_Layer: 0
   m_Name: ElevatedSmallEggCollectibleSet
   m_TagString: ElevatedSmallCollectible
@@ -37,7 +37,7 @@ Transform:
   - {fileID: 7098092745532962607}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6373515850777291861
+--- !u!114 &4032547394999758500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,12 +46,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 5845760315685794988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60b8406e9b00d4ab4dc5adc772820a, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b93f0ad3049dc344b241f844d8cdc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreIncreaseAmount: 0
-  _scoreIncreaseDelay: 0
-  _playerLives: {fileID: 0}
+  ScoreManagerr: {fileID: 0}
+  LaneManager: {fileID: 0}
+  _isPrefab: 1
+  _collectibleSpeed: 6
+  _scoreIncreaseAmount: 50
 --- !u!1001 &2266505406147134331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61,9 +63,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 6108603251070845033}
     m_Modifications:
     - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 6373515850777291861}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     - target: {fileID: 5436848728855544669, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: m_Radius
       value: 0.37
@@ -131,9 +137,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 6108603251070845033}
     m_Modifications:
     - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 6373515850777291861}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     - target: {fileID: 5436848728855544669, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: m_Radius
       value: 0.37
@@ -245,9 +255,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 6373515850777291861}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     - target: {fileID: 7099098001438983576, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
       propertyPath: m_Radius
       value: 0.37
@@ -271,9 +285,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 6108603251070845033}
     m_Modifications:
     - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 396187041877788961, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 6373515850777291861}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     - target: {fileID: 5436848728855544669, guid: be65c6428631178448169cd2ba9e7fc9, type: 3}
       propertyPath: m_Radius
       value: 0.21
@@ -385,9 +403,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
+      propertyPath: _isPrefab
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5441656982328521182, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
       propertyPath: ScoreManagerr
       value: 
-      objectReference: {fileID: 6373515850777291861}
+      objectReference: {fileID: 4947650298182999349, guid: c95ba3a4c152cd24ab84b3f547715a74, type: 3}
     - target: {fileID: 7099098001438983576, guid: b774a7234c7801b488f1a6c679c2884d, type: 3}
       propertyPath: m_Radius
       value: 0.37

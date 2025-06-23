@@ -8,6 +8,8 @@ public class CollectibleUpdateManager : MonoBehaviour
 
     public LaneManager LaneManager;
 
+    public bool _isPrefab = true;
+
     [SerializeField]
     private float _collectibleSpeed = 6.0f;
 
@@ -24,14 +26,33 @@ public class CollectibleUpdateManager : MonoBehaviour
         transform.position = transform.position + (Vector3.back * GetCollectibleSpeed()) * Time.deltaTime;
     }
 
+    private void Start()
+    {
+        if (!_isPrefab)
+        {
+            CollectibleUpdateManager collectible = GetComponentInParent<CollectibleUpdateManager>();
+            if (collectible)
+            {
+                collectible.ScoreManagerr = ScoreManagerr;
+                collectible.LaneManager = LaneManager;
+            }
+
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
-        MoveCollectible();
-
-        if (transform.position.z <= LaneManager.GetDestroyZone())
+        //If this instance of the script is not a prefab, run Update normally
+        if (!_isPrefab)
         {
-            Destroy(gameObject);
+            MoveCollectible();
+
+            if (transform.position.z <= LaneManager.GetDestroyZone())
+            {
+                Destroy(gameObject);
+            }
+
         }
     }
 
