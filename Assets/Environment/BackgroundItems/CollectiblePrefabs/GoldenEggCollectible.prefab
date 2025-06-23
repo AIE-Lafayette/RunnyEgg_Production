@@ -328,7 +328,6 @@ GameObject:
   - component: {fileID: 1542472240204612379}
   - component: {fileID: 2297108060623454180}
   - component: {fileID: 7411294834086884985}
-  - component: {fileID: 4272475630627357867}
   m_Layer: 0
   m_Name: GoldenEggCollectible
   m_TagString: LargeCollectible
@@ -386,8 +385,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b93f0ad3049dc344b241f844d8cdc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScoreManagerr: {fileID: 4272475630627357867}
+  ScoreManagerr: {fileID: 0}
   LaneManager: {fileID: 7411294834086884985}
+  _isPrefab: 0
   _collectibleSpeed: 6
   _scoreIncreaseAmount: 200
 --- !u!114 &7411294834086884985
@@ -402,23 +402,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2848531e46b469b4583f4c4ffe806c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameLanes: []
-  _laneSpawnPositions: []
---- !u!114 &4272475630627357867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7075458264885363507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d60b8406e9b00d4ab4dc5adc772820a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreIncreaseAmount: 0
-  _scoreIncreaseDelay: 0
-  _playerLives: {fileID: 0}
+  GameLanes: []
+  LaneSpawnPositions: []
 --- !u!1 &7982147392317750372
 GameObject:
   m_ObjectHideFlags: 0
