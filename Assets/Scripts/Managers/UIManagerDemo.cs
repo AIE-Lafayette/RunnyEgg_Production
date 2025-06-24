@@ -10,7 +10,6 @@ public class UIManagerDemo : MonoBehaviour
     [SerializeField]
     private GameObject _scoreManager;
 
-
     [SerializeField]
     private GameObject _titleScreenManager;
 
@@ -25,10 +24,16 @@ public class UIManagerDemo : MonoBehaviour
     private TextMeshProUGUI _scoreText;
 
     [SerializeField]
-    private TextMeshProUGUI _playerLivesText;
+    private GameObject _playerLivesText;
+
+    [SerializeField]
+    private GameObject[] _playerLifeIcons;
 
     [SerializeField]
     private TextMeshProUGUI _finalScoreText;
+
+    [SerializeField]
+    private Sprite _lostLifeImage;
 
 
     [Space(10)]
@@ -70,6 +75,7 @@ public class UIManagerDemo : MonoBehaviour
     private void Start()
     {
 
+        // setup all of the different objects, disabling some and adding listeners to others
         if (_player.TryGetComponent(out PlayerLivesBehavior lives))
         {
             _playerLives = lives;
@@ -86,7 +92,7 @@ public class UIManagerDemo : MonoBehaviour
         }
 
         if (_playerLivesText)
-            _playerLivesText.alpha = 0;
+            _playerLivesText.SetActive(false);
 
         if (_scoreText)
             _scoreText.alpha = 0;
@@ -111,18 +117,24 @@ public class UIManagerDemo : MonoBehaviour
             gb.color = newValue;
         }
 
+        for (int i = 0; i < _playerLifeIcons.Length; i++)
+        {
+            _playerLifeIcons[i].SetActive(false);
+        }
+
         if (_quitButton.TryGetComponent(out Button button))
             button.onClick.AddListener(QuitGame);
+
+        _playerLives.OnLifeLost.AddListener(UpdateLivesIcons);
     }
 
     private void Update()
     {
+        // set score text
         if (_scoreText && _scoreManagerScript)
-            _scoreText.text = _scoreManagerScript.Score.ToString("Score: 00000000");
+            _scoreText.text = _scoreManagerScript.Score.ToString("00000000");
 
-        if (_playerLivesText && _playerLives)
-            _playerLivesText.text = _playerLives.Lives.ToString("Lives: 0");
-
+        // if the game is over, fade in the game over screen
         if (_isGameOver && _gameOverAlpha < 1)
         {
             _gameOverAlpha = Mathf.Lerp(_gameOverAlpha, 1.0f, Time.deltaTime);
@@ -143,19 +155,39 @@ public class UIManagerDemo : MonoBehaviour
         }
     }
 
+    private void UpdateLivesIcons()
+    {
+        // change the image shown on each life icon to be the image for a lost life if that life is lost
+        for (int i = 0; i < _playerLifeIcons.Length; i++)
+        {
+            if (i >= _playerLives.Lives)
+            {
+                if (_playerLifeIcons[i].TryGetComponent(out Image img))
+                    img.overrideSprite = _lostLifeImage;
+            }
+        }
+    }
+
     private void SwapToGameplayUI()
     {
+        // disable the title screen ui and enable the gameplay ui
         _titleImage.SetActive(false);
         _startButton.SetActive(false);
         _creditsButton.SetActive(false);
         _quitButton.SetActive(false);
 
         _scoreText.alpha = 1;
-        _playerLivesText.alpha = 1;
+        _playerLivesText.SetActive(true);
+
+        for (int i = 0; i < _playerLifeIcons.Length; i++)
+        {
+            _playerLifeIcons[i].SetActive(true);
+        }
     }
 
     private void SwapToGameOverUI()
     {
+        // disable the gameplay ui and enable the game over ui
         _restartButton.SetActive(true);
         _quitButton.SetActive(true);
 
@@ -171,10 +203,15 @@ public class UIManagerDemo : MonoBehaviour
         _finalScoreText.text = _scoreManagerScript.Score.ToString("Your Final Score is: \n 00000000");
 
         _scoreText.alpha = 0;
-        _playerLivesText.alpha = 0;
+        _playerLivesText.SetActive(false);
 
         _gameOverBorder.SetActive(true);
         _gameOverImage.SetActive(true);
+
+        for (int i = 0; i < _playerLifeIcons.Length; i++)
+        {
+            _playerLifeIcons[i].SetActive(false);
+        }
 
         _isGameOver = true;
     }
