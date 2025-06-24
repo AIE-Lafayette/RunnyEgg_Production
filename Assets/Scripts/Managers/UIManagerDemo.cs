@@ -38,6 +38,12 @@ public class UIManagerDemo : MonoBehaviour
     private GameObject _titleImage;
 
     [SerializeField]
+    private GameObject _gameOverImage;
+
+    [SerializeField]
+    private GameObject _gameOverBorder;
+
+    [SerializeField]
     private GameObject _startButton;
 
     [SerializeField]
@@ -57,8 +63,15 @@ public class UIManagerDemo : MonoBehaviour
 
     public GameObject RestartButton { get => _restartButton; }
 
+    private float _gameOverFadeTimer;
+
+    private bool _isGameOver;
+
+    private float _gameOverAlpha;
+
     private void Start()
     {
+
         if (_player.TryGetComponent(out PlayerLivesBehavior lives))
         {
             _playerLives = lives;
@@ -83,6 +96,23 @@ public class UIManagerDemo : MonoBehaviour
         if (_finalScoreText)
             _finalScoreText.alpha = 0;
 
+
+        _gameOverAlpha = 0;
+
+        if (_gameOverImage.TryGetComponent(out Image g))
+        {
+            Color newValue = g.color;
+            newValue.a = _gameOverAlpha;
+            g.color = newValue;
+        }
+
+        if (_gameOverBorder.TryGetComponent(out Image gb))
+        {
+            Color newValue = gb.color;
+            newValue.a = _gameOverAlpha;
+            gb.color = newValue;
+        }
+
         if (_quitButton.TryGetComponent(out Button button))
             button.onClick.AddListener(QuitGame);
     }
@@ -94,6 +124,25 @@ public class UIManagerDemo : MonoBehaviour
 
         if (_playerLivesText && _playerLives)
             _playerLivesText.text = _playerLives.Lives.ToString("Lives: 0");
+
+        if (_isGameOver && _gameOverAlpha < 1)
+        {
+            _gameOverAlpha = Mathf.Lerp(_gameOverAlpha, 1.0f, Time.deltaTime);
+
+            if (_gameOverImage.TryGetComponent(out Image g))
+            {
+                Color newValue = g.color;
+                newValue.a = _gameOverAlpha;
+                g.color = newValue;
+            }
+
+            if (_gameOverBorder.TryGetComponent(out Image gb))
+            {
+                Color newValue = gb.color;
+                newValue.a = _gameOverAlpha * 2;
+                gb.color = newValue;
+            }
+        }
     }
 
     private void SwapToGameplayUI()
@@ -117,6 +166,8 @@ public class UIManagerDemo : MonoBehaviour
 
         _scoreText.alpha = 0;
         _playerLivesText.alpha = 0;
+
+        _isGameOver = true;
     }
 
     private void QuitGame()
