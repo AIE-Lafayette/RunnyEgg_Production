@@ -30,6 +30,9 @@ public class UIManagerDemo : MonoBehaviour
     private GameObject[] _playerLifeIcons;
 
     [SerializeField]
+    private GameObject _finalScoreImage;
+
+    [SerializeField]
     private TextMeshProUGUI _finalScoreText;
 
     [SerializeField]
@@ -96,6 +99,9 @@ public class UIManagerDemo : MonoBehaviour
 
         if (_scoreText)
             _scoreText.alpha = 0;
+
+        if (_finalScoreImage)
+            _finalScoreImage.SetActive(false);
 
         if (_finalScoreText)
             _finalScoreText.alpha = 0;
@@ -199,8 +205,9 @@ public class UIManagerDemo : MonoBehaviour
             rect.position = quitPosition;
         }
 
+        _finalScoreImage.SetActive(true);
         _finalScoreText.alpha = 1;
-        _finalScoreText.text = _scoreManagerScript.Score.ToString("Your Final Score is: \n 00000000");
+        _finalScoreText.text = _scoreManagerScript.Score.ToString("00000000");
 
         _scoreText.alpha = 0;
         _playerLivesText.SetActive(false);
