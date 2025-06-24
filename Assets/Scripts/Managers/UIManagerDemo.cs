@@ -63,8 +63,6 @@ public class UIManagerDemo : MonoBehaviour
 
     public GameObject RestartButton { get => _restartButton; }
 
-    private float _gameOverFadeTimer;
-
     private bool _isGameOver;
 
     private float _gameOverAlpha;
@@ -161,11 +159,22 @@ public class UIManagerDemo : MonoBehaviour
         _restartButton.SetActive(true);
         _quitButton.SetActive(true);
 
+        if (_quitButton.TryGetComponent(out RectTransform rect))
+        {
+            Vector3 quitPosition = rect.position;
+            quitPosition.x += 200;
+            quitPosition.y -= 100;
+            rect.position = quitPosition;
+        }
+
         _finalScoreText.alpha = 1;
         _finalScoreText.text = _scoreManagerScript.Score.ToString("Your Final Score is: \n 00000000");
 
         _scoreText.alpha = 0;
         _playerLivesText.alpha = 0;
+
+        _gameOverBorder.SetActive(true);
+        _gameOverImage.SetActive(true);
 
         _isGameOver = true;
     }
