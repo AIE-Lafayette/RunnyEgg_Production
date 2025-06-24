@@ -35,6 +35,9 @@ public class UIManagerDemo : MonoBehaviour
 
 
     [SerializeField]
+    private GameObject _titleImage;
+
+    [SerializeField]
     private GameObject _startButton;
 
     [SerializeField]
@@ -95,6 +98,7 @@ public class UIManagerDemo : MonoBehaviour
 
     private void SwapToGameplayUI()
     {
+        _titleImage.SetActive(false);
         _startButton.SetActive(false);
         _creditsButton.SetActive(false);
         _quitButton.SetActive(false);
