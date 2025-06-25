@@ -45,32 +45,6 @@ public class CollectibleSpawnManager : MonoBehaviour
     {
         Vector3 determinedLane = new Vector3();
 
-        if (_collectiblePrefabs[index].CompareTag("SmallCollectible"))
-        {
-            for (int i = 0; i < _obstaclePositions.Length; i++)
-            {
-                //These checks find out if the x position is greater than or less than 0 due to the bread loaf obstacle being offset from any static lanes
-                //Checks if an obstacle is in the right-side lane and is moving adjacent to the collectible prefab.
-                if (_obstaclePositions[i].position.x == _laneManager.GetRightLanePos() && _obstaclePositions[i].position.z == _collectiblePrefabs[index].transform.position.z)
-                {
-                    //Then ensures that the collectible's spawn lane is set to be in lanes other than the right-side lane
-                    determinedLane = _laneManager.GetMiddleOrLeftLaneSpawns();
-                }
-                //Checks if an obstacle is in the left-side lane and is moving adjacent to the collectible prefab.
-                else if (_obstaclePositions[i].position.x == _laneManager.GetLeftLanePos() && _obstaclePositions[i].position.z == _collectiblePrefabs[index].transform.position.z)
-                {
-                    //Then ensures that the collectible's spawn lane is set to be in lanes other than the left-side lane
-                    determinedLane = _laneManager.GetMiddleOrRightLaneSpawns();
-                }
-                //Checks if an obstacle is in the middle lane and is moving adjacent to the collectible prefab.
-                else if (_obstaclePositions[i].position.x == _laneManager.GetMiddleLanePos() && _obstaclePositions[i].position.z == _collectiblePrefabs[index].transform.position.z)
-                {
-                    //Then ensures that the collectible's spawn lane is set to be in lanes other than the middle lane
-                    determinedLane = _laneManager.GetLeftOrRightLaneSpawns();
-                }
-            }
-        }
-
         determinedLane = _laneManager.GetRandomSpawnLane();
 
         return determinedLane;
@@ -80,7 +54,30 @@ public class CollectibleSpawnManager : MonoBehaviour
     {
         int index = GetRandomCollectibleIndex();
 
+        Vector3 elevationModifier = new Vector3(0, 2.7f, 0);
+        LayerMask layerMask = LayerMask.GetMask("Obstacle");
+
         GameObject collectible = Instantiate(_collectiblePrefabs[index], SetCollectibleLane(index), _collectiblePrefabs[index].transform.rotation);
+        Vector3 raycastStartOffset = new Vector3(0, 5, 0);
+        Vector3 raycastStartVector = collectible.transform.position + raycastStartOffset;
+        Vector3 raycastEndVector = collectible.transform.position + collectible.transform.TransformDirection(Vector3.down) * 10.0f;
+        Vector3 rayDir = collectible.transform.TransformDirection(Vector3.down);
+        float rayDistance = 25.0f;
+        RaycastHit hit;
+        if (Physics.Raycast(raycastStartVector, rayDir, out hit, rayDistance, layerMask))
+        {
+            if (hit.collider.gameObject.CompareTag("BurnerObstacle"))
+            {
+                Destroy(collectible);
+            }
+            if (hit.collider.gameObject.CompareTag("FlourSackObstacle"))
+            {
+                Destroy(collectible);
+            }
+
+            collectible.transform.position = collectible.transform.position + elevationModifier;
+        }
+
         if (collectible.TryGetComponent(out CollectibleUpdateManager c))
         {
             c.ScoreManagerr = _scoreManager;
