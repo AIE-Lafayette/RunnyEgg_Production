@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class LaneManager : MonoBehaviour
 {
-    public Vector3[] _gameLanes;
-    public Vector3[] _laneSpawnPositions;
+    public Vector3[] GameLanes;
+    public Vector3[] LaneSpawnPositions;
 
     private int _laneAmount = 3;
 
@@ -29,6 +29,11 @@ public class LaneManager : MonoBehaviour
         return _laneAmount;
     }
 
+    public float GetLeftLanePos()
+    {
+        return _leftLane.x;
+    }
+
     public Vector3 GetLeftLane()
     {
         return _leftLane;
@@ -39,6 +44,11 @@ public class LaneManager : MonoBehaviour
         return _leftLaneStartPosition;
     }
 
+    public float GetMiddleLanePos()
+    {
+        return _middleLane.x;
+    }
+
     public Vector3 GetMiddleLane()
     {
         return _middleLane;
@@ -47,6 +57,11 @@ public class LaneManager : MonoBehaviour
     public Vector3 GetMiddleLaneStartPos()
     {
         return _middleLaneStartPosition;
+    }
+
+    public float GetRightLanePos()
+    {
+        return _rightLane.x;
     }
 
     public Vector3 GetRightLane()
@@ -133,16 +148,16 @@ public class LaneManager : MonoBehaviour
     //Establishes the positions and indexes of the three lanes in the game
     public void SetupGameLanes()
     {
-        _gameLanes = new Vector3[GetLaneAmount()];
-        _gameLanes[0] = GetLeftLane();
-        _gameLanes[1] = GetMiddleLane();
-        _gameLanes[2] = GetRightLane();
+        GameLanes = new Vector3[GetLaneAmount()];
+        GameLanes[0] = GetLeftLane();
+        GameLanes[1] = GetMiddleLane();
+        GameLanes[2] = GetRightLane();
 
 
-        _laneSpawnPositions = new Vector3[GetLaneAmount()];
-        _laneSpawnPositions[0] = GetLeftLaneStartPos();
-        _laneSpawnPositions[1] = GetMiddleLaneStartPos();
-        _laneSpawnPositions[2] = GetRightLaneStartPos();
+        LaneSpawnPositions = new Vector3[GetLaneAmount()];
+        LaneSpawnPositions[0] = GetLeftLaneStartPos();
+        LaneSpawnPositions[1] = GetMiddleLaneStartPos();
+        LaneSpawnPositions[2] = GetRightLaneStartPos();
     }
 
     public void Start()
@@ -153,7 +168,7 @@ public class LaneManager : MonoBehaviour
     public Vector3 GetRandomSpawnLane()
     {
         int laneIndex = UnityEngine.Random.Range(0, GetLaneAmount());
-        Vector3 randomLanePosition = new Vector3(_laneSpawnPositions[laneIndex].x, _laneSpawnPositions[laneIndex].y, _laneSpawnPositions[laneIndex].z);
+        Vector3 randomLanePosition = new Vector3(LaneSpawnPositions[laneIndex].x, LaneSpawnPositions[laneIndex].y, LaneSpawnPositions[laneIndex].z);
 
         return randomLanePosition;
     }
@@ -168,16 +183,16 @@ public class LaneManager : MonoBehaviour
         switch (laneNumber)
         {
             case 1:
-                lanePosition = _gameLanes[0].x;
+                lanePosition = GameLanes[0].x;
                 break;
             case 2:
-                lanePosition = _gameLanes[1].x;
+                lanePosition = GameLanes[1].x;
                 break;
             case 3:
-                lanePosition = _gameLanes[2].x;
+                lanePosition = GameLanes[2].x;
                 break;
             default:
-                lanePosition = _gameLanes[1].x;
+                lanePosition = GameLanes[1].x;
                 break;
         }
 

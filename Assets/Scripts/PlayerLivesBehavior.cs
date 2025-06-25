@@ -48,12 +48,11 @@ public class PlayerLivesBehavior : MonoBehaviour
     }
 
     // if the player comes in contact with an obstacle and doesn't have invincibility frames, player loses a life
-    private void OnCollisionEnter(Collision collision)
+    public void Hurt()
     {
         if (_invincibilityFramesTimer > 0)
             return;
 
-        if (collision.gameObject.tag.Contains("Obstacle"))
-            LoseLife();
+        LoseLife();
     }
 }
