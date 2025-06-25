@@ -245,12 +245,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _laneManager: {fileID: 104974003}
   _obstaclePrefabs:
-  - {fileID: 8956102009733659996, guid: fc19a7c71a25f824b81d20f5a110da7b, type: 3}
-  - {fileID: 5218117437201622472, guid: 50c705cbf5a5eec419d1519ed2e01fbe, type: 3}
+  - {fileID: 5249195534977024538, guid: ac7eea78541f63048926d772bbe9c296, type: 3}
+  - {fileID: 4731486004540017994, guid: c812519f74c0e4d46812ab7591109e39, type: 3}
   - {fileID: 4281187316519657608, guid: bd8afe01f112ec440ba0e60b8f5aa202, type: 3}
-  - {fileID: 6750944811438506478, guid: c34d1bf3ee0e8f34186bf66cbb469a8e, type: 3}
-  - {fileID: 5612508447751253707, guid: 61f9d4bb97a70f3429066fd50a286d9b, type: 3}
-  - {fileID: 7843812542341137483, guid: 707b18184e9b8dc4c8f8de941b7af82c, type: 3}
+  - {fileID: 655502925136464367, guid: 1e5763bb113aeee47b077e8eaee7b2fe, type: 3}
+  - {fileID: 8629585107900117160, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
+  - {fileID: 5833246518545582477, guid: 8c016afcb68b03647915604af3887753, type: 3}
   _obstacleStartDelay: 2
   _obstacleSpawnInterval: 2
   _isGameStarted: 1
@@ -1048,7 +1048,7 @@ MonoBehaviour:
   - {fileID: 6506908904494416453, guid: c34d1bf3ee0e8f34186bf66cbb469a8e, type: 3}
   - {fileID: 8059121012939591943, guid: 50c705cbf5a5eec419d1519ed2e01fbe, type: 3}
   _collectibleStartDelay: 3
-  _collectibleSpawnInterval: 1.5
+  _collectibleSpawnInterval: 0.5
   _isGameStarted: 1
 --- !u!1 &559620581
 GameObject:
