@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4997809677771929578}
   - component: {fileID: 1972702811828550909}
   - component: {fileID: 8214504654548980740}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireParticalEmitter
-  m_TagString: Untagged
+  m_TagString: BurnerObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4844,9 +4844,9 @@ GameObject:
   - component: {fileID: 2899976601417241561}
   - component: {fileID: 4157087860489502263}
   - component: {fileID: 1637861550362834675}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VFX_Ground_Fire (1)
-  m_TagString: Untagged
+  m_TagString: BurnerObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9674,9 +9674,9 @@ GameObject:
   - component: {fileID: 1340674881396658339}
   - component: {fileID: 596303981607002197}
   - component: {fileID: 1423829405729740127}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: burner_high
-  m_TagString: Untagged
+  m_TagString: BurnerObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9761,9 +9761,9 @@ GameObject:
   - component: {fileID: 6532473965940175443}
   - component: {fileID: 3912360245824651756}
   - component: {fileID: 2818144645827832389}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VFX_Ground_Fire
-  m_TagString: Untagged
+  m_TagString: BurnerObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14591,9 +14591,9 @@ GameObject:
   - component: {fileID: 3723772444635993597}
   - component: {fileID: 5964985511140102543}
   - component: {fileID: 3014280327932670534}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: VFX_Ground_Fire (2)
-  m_TagString: Untagged
+  m_TagString: BurnerObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19419,9 +19419,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2136269615031089341}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: FireAndBurnerAdjusted
-  m_TagString: Untagged
+  m_TagString: BurnerObstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19455,7 +19455,7 @@ GameObject:
   - component: {fileID: 6852302416694453080}
   - component: {fileID: 6029784756583741690}
   - component: {fileID: 7286172148712166511}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Portable Burner
   m_TagString: BurnerObstacle
   m_Icon: {fileID: 0}

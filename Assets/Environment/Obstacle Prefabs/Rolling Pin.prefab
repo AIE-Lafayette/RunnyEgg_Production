@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4619684805188187277}
   - component: {fileID: 3303816305159488304}
   - component: {fileID: 9017991398490693655}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rolling Pin
   m_TagString: RollingPinObstacle
   m_Icon: {fileID: 0}
@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2848531e46b469b4583f4c4ffe806c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameLanes: []
-  _laneSpawnPositions: []
+  GameLanes: []
+  LaneSpawnPositions: []
 --- !u!1001 &4279589563921007677
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,9 +132,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 63985514689412551, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_Name
       value: rollingpin_low
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7426879535756044255, guid: 871acb1ebc84e444a93bc04b5282aea5, type: 3}
       propertyPath: m_LocalPosition.x

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2219195970407738800}
   - component: {fileID: 6319715597289379692}
   - component: {fileID: 5082788619755178013}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Bread
   m_TagString: BreadLoafObstacle
   m_Icon: {fileID: 0}
@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2848531e46b469b4583f4c4ffe806c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameLanes: []
-  _laneSpawnPositions: []
+  GameLanes: []
+  LaneSpawnPositions: []
 --- !u!1001 &3761552880481846061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -132,6 +132,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7283693533871985558, guid: a82b9a03cf62dc64faefe6e6b670b58d, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -4403925503374346154, guid: a82b9a03cf62dc64faefe6e6b670b58d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -151,6 +155,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: a82b9a03cf62dc64faefe6e6b670b58d, type: 3}
       propertyPath: m_Name
       value: breadloaf_low
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a82b9a03cf62dc64faefe6e6b670b58d, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7243865437606549851, guid: a82b9a03cf62dc64faefe6e6b670b58d, type: 3}
       propertyPath: m_Materials.Array.data[0]
