@@ -21,6 +21,11 @@ public class CreditsManager : MonoBehaviour
     [Tooltip("Speed for the credits leaving. The credits will accelerate over time when leaving.")]
     private float _creditsExitSpeed = 5.0f;
 
+    [SerializeField]
+    private Canvas _canvas;
+
+    private float _canvasHeight;
+
 
 
     private RectTransform _creditsTextTransform;
@@ -37,6 +42,9 @@ public class CreditsManager : MonoBehaviour
         _startButton.onClick.AddListener(CancelCredits);
 
         _creditsTextTransform = _creditsText.GetComponent<RectTransform>();
+
+        if (_canvas.TryGetComponent(out RectTransform rect))
+            _canvasHeight = rect.rect.height;
     }
 
     private void Update()
@@ -56,7 +64,7 @@ public class CreditsManager : MonoBehaviour
         _creditsText.transform.position = newCreditsPosition;
 
         // if the credits text is out of bounds, destroy it and prevent further updates
-        if (Mathf.Abs(_creditsText.transform.position.y) > _creditsTextTransform.rect.height + 25)
+        if (Mathf.Abs(_creditsText.transform.position.y) > _creditsTextTransform.rect.height + 25 + _canvasHeight)
         {
             _creditsStarted = false;
             Destroy(_creditsText);
