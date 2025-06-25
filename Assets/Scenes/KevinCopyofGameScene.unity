@@ -250,7 +250,7 @@ MonoBehaviour:
   - {fileID: 4281187316519657608, guid: bd8afe01f112ec440ba0e60b8f5aa202, type: 3}
   - {fileID: 655502925136464367, guid: 1e5763bb113aeee47b077e8eaee7b2fe, type: 3}
   - {fileID: 8629585107900117160, guid: 412b0fe3eb0ccc245aea62c2e1649232, type: 3}
-  - {fileID: 681231161999751628, guid: 9a291762c10ce014ebef8311a3e73590, type: 3}
+  - {fileID: 5833246518545582477, guid: 8c016afcb68b03647915604af3887753, type: 3}
   _obstacleStartDelay: 2
   _obstacleSpawnInterval: 2
   _isGameStarted: 1
