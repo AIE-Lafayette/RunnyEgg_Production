@@ -16,9 +16,12 @@ public class MusicManager : MonoBehaviour
     [SerializeField]
     private PlayerLivesBehavior _playerLives;
 
+    [SerializeField]
+    private float _musicDecreaseSpeed = 0.5f;
+
     private bool _isGameOver;
 
-    private float _pitchAndVolumeModifier = 0.0f;
+    private float _pitchAndVolumeModifier = 1.0f;
 
     private void Start()
     {
@@ -30,9 +33,9 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
-        if (_isGameOver && _pitchAndVolumeModifier <= 0.0f)
+        if (_isGameOver && _pitchAndVolumeModifier > 0.0f)
         {
-            _pitchAndVolumeModifier = Mathf.Lerp(_pitchAndVolumeModifier, 0.0f, Time.deltaTime);
+            _pitchAndVolumeModifier = Mathf.Lerp(_pitchAndVolumeModifier, 0.0f, _musicDecreaseSpeed * Time.deltaTime);
             _audioSource.pitch = _pitchAndVolumeModifier;
             _audioSource.volume = _pitchAndVolumeModifier;
         }
