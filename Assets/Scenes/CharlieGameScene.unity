@@ -1839,8 +1839,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -200, y: -700}
-  m_SizeDelta: {x: 400, y: 700}
+  m_AnchoredPosition: {x: -200, y: -820}
+  m_SizeDelta: {x: 400, y: 820}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &897325033
 MonoBehaviour:
@@ -1889,12 +1889,17 @@ MonoBehaviour:
     Justin Judice
 
 
-    Special Thanks
+    Music
+
+    Quinten Hanger
+
+
+    Special
+    Thanks
 
     Court Smith
 
-    Donald
-    Gremillion II'
+    Donald Gremillion II'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1982,6 +1987,10 @@ PrefabInstance:
     - target: {fileID: 3123305143868251640, guid: f5ec3e7c89bc95349a45c9c754a90b1f, type: 3}
       propertyPath: m_Name
       value: PrototypePlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5009295407225636852, guid: f5ec3e7c89bc95349a45c9c754a90b1f, type: 3}
+      propertyPath: _jumpForce
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5009295407225636852, guid: f5ec3e7c89bc95349a45c9c754a90b1f, type: 3}
       propertyPath: OnLeftInput.m_PersistentCalls.m_Calls.Array.size
