@@ -21,10 +21,6 @@ public class PlayerLivesBehavior : MonoBehaviour
 
     public int Lives { get => _lives; }
 
-    public float InvincibilityFramesDuration { get => _invincibilityFramesDuration; }
-
-    public float InvincibilityFramesTimer { get => _invincibilityFramesTimer; }
-
     public bool IsDead { get => _isDead; }
 
     private void Update()
@@ -42,14 +38,13 @@ public class PlayerLivesBehavior : MonoBehaviour
         {
             OnAllLivesLost.Invoke();
             _isDead = true;
-            _invincibilityFramesTimer = 99;
         }
         else
         {
             OnLifeLost.Invoke();
-            _invincibilityFramesTimer = _invincibilityFramesDuration;
         }
 
+        _invincibilityFramesTimer = _invincibilityFramesDuration;
     }
 
     // if the player comes in contact with an obstacle and doesn't have invincibility frames, player loses a life

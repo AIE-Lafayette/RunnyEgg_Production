@@ -15,9 +15,6 @@ public class PlayerAnimationManager : MonoBehaviour
 
     private Animator _animator;
 
-    [SerializeField]
-    private Material _playerMaterial;
-
     private void Awake()
     {
         if (TryGetComponent(out Animator animator))
@@ -32,19 +29,6 @@ public class PlayerAnimationManager : MonoBehaviour
         _playerController.OnLanding.AddListener(StopJumping);
         _playerLives.OnLifeLost.AddListener(Hit);
         _playerLives.OnAllLivesLost.AddListener(StartDying);
-
-        _playerMaterial.SetFloat("_FresnelPower", 0);
-    }
-
-    private void LateUpdate()
-    {
-        if (_playerLives.InvincibilityFramesTimer > 0)
-            _playerMaterial.SetFloat("_FresnelPower", Mathf.Min(2.0f, _playerLives.InvincibilityFramesTimer));
-    }
-
-    private void OnApplicationQuit()
-    {
-        _playerMaterial.SetFloat("_FresnelPower", 0);
     }
 
     private void StartRunning()

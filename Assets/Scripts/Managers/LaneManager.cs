@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class LaneManager : MonoBehaviour
@@ -33,7 +34,7 @@ public class LaneManager : MonoBehaviour
         return _leftLane.x;
     }
 
-    public Vector3 GetLeftLaneVector()
+    public Vector3 GetLeftLane()
     {
         return _leftLane;
     }
@@ -48,7 +49,7 @@ public class LaneManager : MonoBehaviour
         return _middleLane.x;
     }
 
-    public Vector3 GetMiddleLaneVector()
+    public Vector3 GetMiddleLane()
     {
         return _middleLane;
     }
@@ -63,7 +64,7 @@ public class LaneManager : MonoBehaviour
         return _rightLane.x;
     }
 
-    public Vector3 GetRightLaneVector()
+    public Vector3 GetRightLane()
     {
         return _rightLane;
     }
@@ -148,9 +149,9 @@ public class LaneManager : MonoBehaviour
     public void SetupGameLanes()
     {
         GameLanes = new Vector3[GetLaneAmount()];
-        GameLanes[0] = GetLeftLaneVector();
-        GameLanes[1] = GetMiddleLaneVector();
-        GameLanes[2] = GetRightLaneVector();
+        GameLanes[0] = GetLeftLane();
+        GameLanes[1] = GetMiddleLane();
+        GameLanes[2] = GetRightLane();
 
 
         LaneSpawnPositions = new Vector3[GetLaneAmount()];
@@ -170,6 +171,32 @@ public class LaneManager : MonoBehaviour
         Vector3 randomLanePosition = new Vector3(LaneSpawnPositions[laneIndex].x, LaneSpawnPositions[laneIndex].y, LaneSpawnPositions[laneIndex].z);
 
         return randomLanePosition;
+    }
+
+    //Returns a float value that can be used as an obstacle's lane position
+    //Passing 1 as a parameter returns the left lane, 2 the middle lane, 3 the right lane
+    //The middle lane is returned on default
+    public float GetObstacleLane(int laneNumber)
+    {
+        float lanePosition;
+
+        switch (laneNumber)
+        {
+            case 1:
+                lanePosition = GameLanes[0].x;
+                break;
+            case 2:
+                lanePosition = GameLanes[1].x;
+                break;
+            case 3:
+                lanePosition = GameLanes[2].x;
+                break;
+            default:
+                lanePosition = GameLanes[1].x;
+                break;
+        }
+
+        return lanePosition;
     }
 
 

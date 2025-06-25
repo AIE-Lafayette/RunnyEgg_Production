@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4248121256043333394}
   - component: {fileID: 8891081713708370586}
   - component: {fileID: 3944395600897316980}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Flour Bag
   m_TagString: FlourSackObstacle
   m_Icon: {fileID: 0}
@@ -82,8 +82,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2848531e46b469b4583f4c4ffe806c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameLanes: []
-  LaneSpawnPositions: []
+  _gameLanes: []
+  _laneSpawnPositions: []
 --- !u!1001 &4585790635376034913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -143,10 +143,6 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 9ec7430c65aa04b4e8a4b977529eabda, type: 3}
       propertyPath: m_Name
       value: flour_high
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 9ec7430c65aa04b4e8a4b977529eabda, type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
